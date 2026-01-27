@@ -102,6 +102,7 @@ const projects: Project[] = [
     year: '2024',
     githubUrl: 'https://github.com/happyADD/Cart2024',
     videoUrl: '/project-portfolio/project4-video.mp4',
+    demoUrl: '/project-portfolio/project4-demo.mp4',
     details: {
       challenge: '中国机器人大赛暨RoboCup中国赛智能投送赛项。',
       solution: '通过视觉同时完成定位和目标识别，与里程计定位相结合，提高鲁棒性，实现精准投送。',

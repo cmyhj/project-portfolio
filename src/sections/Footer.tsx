@@ -71,15 +71,15 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <p className="text-white/60">
                 <span className="text-white/80">邮箱：</span>
-                hello@robotics.dev
+                autism2484684043@163.com
               </p>
               <p className="text-white/60">
                 <span className="text-white/80">电话：</span>
-                +86 138 8888 8888
+                +86 189 6501 3309
               </p>
               <p className="text-white/60">
                 <span className="text-white/80">地址：</span>
-                深圳市南山区
+                南京航空航天大学 机电学院
               </p>
             </div>
           </div>
