@@ -4,7 +4,7 @@ import { defineConfig } from "vite"
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/project-portfolio/',
+  base: './',
   plugins: [react()],
   resolve: {
     alias: {
