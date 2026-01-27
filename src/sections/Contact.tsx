@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { toast } from 'sonner';
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Github, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -51,15 +51,14 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: Mail, label: '邮箱', value: 'hello@robotics.dev' },
-    { icon: Phone, label: '电话', value: '+86 138 8888 8888' },
-    { icon: MapPin, label: '地址', value: '深圳市南山区' },
+    { icon: Mail, label: '邮箱', value: 'autism2484684043@163.com' },
+    { icon: Phone, label: '电话', value: '+86 189 6501 3309' },
+    { icon: MapPin, label: '地址', value: '南京航空航天大学' },
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/yourusername', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/autism2484684043', label: 'GitHub' },
+    { icon: Twitter, href: 'https://twitter.com/autism2484684043', label: 'Twitter' },
   ];
 
   return (

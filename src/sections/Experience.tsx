@@ -17,43 +17,30 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    company: '未来机器人科技',
-    role: '高级机器人工程师',
-    period: '2022 - 至今',
-    location: '深圳',
-    description: '负责人形机器人平衡控制系统的研发，领导5人技术团队。',
+    company: '南京航空航天大学',
+    role: '机器人工程专业本科生',
+    period: '2023 - 至今',
+    location: '南京',
+    description: '学业主修机电',
     achievements: [
-      '开发双足步态规划算法，实现15°斜坡稳定行走',
-      '优化MPC控制器，抗冲击能力提升40%',
-      '申请3项机器人平衡控制相关专利',
+      '开发基于STM32的电控系统，实现仿生软体尺蠖机器人粘附运动',
+      '研发爬壁机器人，实现负角度（80°+）越棱迁移',
+      '学业成绩良好',
     ],
     image: '/work1.jpg',
   },
   {
-    company: '智能制造研究院',
-    role: '机器人算法工程师',
+    company: '南航长空御风机器人战队',
+    role: '哨兵组组长',
     period: '2020 - 2022',
     location: '上海',
-    description: '参与协作机械臂控制系统开发，负责运动规划和力控算法。',
+    description: '负责哨兵机器人导航与决策模块以及部分电控，领导6人技术团队。',
     achievements: [
-      '实现基于阻抗控制的力感知算法，响应时间<10ms',
-      '开发视觉引导抓取系统，成功率达99.5%',
-      '主导完成3个客户项目的交付',
+      '开发基于LIDAR的SLAM算法，实现环境地图构建',
+      '实现基于A*/TEB算法的路径规划，导航成功率95%',
+      '参与机器人导航系统的硬件选型和调试',
     ],
     image: '/work2.jpg',
-  },
-  {
-    company: '创新科技实验室',
-    role: '机器人开发工程师',
-    period: '2019 - 2020',
-    location: '北京',
-    description: '参与自主配送机器人的研发，负责SLAM和导航模块。',
-    achievements: [
-      '实现Cartographer建图，定位精度±5cm',
-      '开发动态障碍物检测算法，导航成功率99.2%',
-      '完成机器人电梯控制模块集成',
-    ],
-    image: '/work3.jpg',
   },
 ];
 

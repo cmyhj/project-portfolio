@@ -33,14 +33,14 @@ const services: Service[] = [
   },
   {
     icon: Monitor,
-    title: '机器人仿真',
-    description: '基于Gazebo、Webots等平台的机器人仿真开发。',
-    features: ['物理建模', '传感器仿真', '场景构建', '算法验证'],
+    title: '嵌入式系统设计',
+    description: '基于STM32等平台的嵌入式系统设计与开发。',
+    features: ['PCB设计', '通信接口设计', '实时操作系统集成', '代码优化'],
   },
   {
     icon: Code,
     title: '软件开发',
-    description: 'ROS/ROS2驱动开发与机器人应用程序。',
+    description: 'ROS2驱动开发与机器人应用程序。',
     features: ['驱动开发', '算法实现', '界面开发', '系统集成'],
   },
 ];
@@ -89,15 +89,15 @@ const Services = () => {
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="w-12 h-0.5 bg-[#00a67d]" />
             <span className="text-[#00a67d] text-sm uppercase tracking-widest font-medium">
-              服务范围
+              能力范围
             </span>
             <div className="w-12 h-0.5 bg-[#00a67d]" />
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-            我能为您<span className="text-gradient">做什么</span>
+            我能<span className="text-gradient">做什么</span>
           </h2>
           <p className="text-white/60 max-w-2xl mx-auto">
-            提供从设计到实现的全方位机器人技术服务，助力您的创新项目落地。
+            从设计到实现的全方位机器人技术，助力创新项目落地。
           </p>
         </div>
 

@@ -8,7 +8,6 @@ import {
   Eye,
   Cpu,
   Network,
-  Database,
   GitBranch,
 } from 'lucide-react';
 
@@ -22,14 +21,13 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: '机器人设计', level: 95, icon: Bot, category: '核心技能' },
-  { name: '机械设计', level: 90, icon: Cog, category: '核心技能' },
-  { name: 'ROS/ROS2', level: 92, icon: Network, category: '软件' },
+  { name: '机器人设计', level: 90, icon: Bot, category: '核心技能' },
+  { name: '机械设计', level: 85, icon: Cog, category: '核心技能' },
+  { name: 'ROS/ROS2', level: 95, icon: Network, category: '软件' },
   { name: 'Python', level: 88, icon: Code, category: '软件' },
   { name: 'C++', level: 85, icon: Code, category: '软件' },
-  { name: '计算机视觉', level: 82, icon: Eye, category: 'AI' },
-  { name: '嵌入式系统', level: 80, icon: Cpu, category: '硬件' },
-  { name: '数据库管理', level: 75, icon: Database, category: '软件' },
+  { name: '计算机视觉', level: 92, icon: Eye, category: 'AI' },
+  { name: '嵌入式系统', level: 90, icon: Cpu, category: '硬件' },
   { name: '版本控制', level: 90, icon: GitBranch, category: '工具' },
 ];
 

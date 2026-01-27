@@ -89,10 +89,9 @@ const Hero = () => {
   }, []);
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
-    { icon: FileText, href: '/resume.pdf', label: 'Resume' },
+    { icon: Github, href: 'https://github.com/cmyhj', label: 'GitHub' },
+    { icon: Mail, href: 'mailto:autism2484684043@163.com', label: 'Email' },
+    { icon: FileText, href: '/个人简历.pdf', label: 'Resume' },
   ];
 
   return (
@@ -123,7 +122,7 @@ const Hero = () => {
           <div className="order-2 lg:order-1 text-center lg:text-left">
             <div ref={nameRef} className="mb-6">
               <span className="text-[#00a67d] text-sm uppercase tracking-[0.3em] font-medium">
-                王艺臻
+                李沐远
               </span>
             </div>
 
@@ -131,16 +130,16 @@ const Hero = () => {
               ref={titleRef}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-8"
             >
-              <span className="block text-white">机器人设计师</span>
-              <span className="block text-gradient mt-2">与开发者</span>
+              <span className="block text-white">机器人实践者</span>
+              <span className="block text-gradient mt-2">与探索者</span>
             </h1>
 
             <p
               ref={subtitleRef}
               className="text-lg text-white/70 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed"
             >
-              一名热衷于打造创新机器人解决方案的工程师，专注于协作机械臂、自主导航系统和
-              人机交互技术。将创意转化为现实，用代码赋予机器生命。
+              一名深耕机器人自主导航的系统级实践者，兼具机械设计、电控开发与算法实现的
+              全栈能力。将创意转化为现实，用代码赋予机器生命。
             </p>
 
             <div ref={socialRef} className="flex flex-wrap justify-center lg:justify-start gap-4">
@@ -174,8 +173,8 @@ const Hero = () => {
               {/* Main image container */}
               <div className="relative w-72 h-96 sm:w-80 sm:h-[28rem] lg:w-96 lg:h-[32rem] rounded-2xl overflow-hidden glass-card">
                 <img
-                  src="/portrait.jpg"
-                  alt="王艺臻"
+                  src="/project-portfolio/portrait.jpg"
+                  alt="李沐远"
                   className="w-full h-full object-cover"
                 />
                 
@@ -187,15 +186,15 @@ const Hero = () => {
               <div className="absolute -bottom-4 -left-4 glass-card rounded-xl px-4 py-3 animate-float">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-[#00a67d] rounded-full animate-pulse" />
-                  <span className="text-sm text-white/80">可接新项目</span>
+                  <span className="text-sm text-white/80">欢迎交流</span>
                 </div>
               </div>
 
               {/* Experience badge */}
               <div className="absolute -top-4 -right-4 glass-card rounded-xl px-4 py-3 animate-float" style={{ animationDelay: '0.5s' }}>
                 <div className="text-center">
-                  <span className="block text-2xl font-bold text-[#00a67d]">5+</span>
-                  <span className="text-xs text-white/60">年经验</span>
+                  <span className="block text-2xl font-bold text-[#00a67d]">20+</span>
+                  <span className="text-xs text-white/60">项目经验</span>
                 </div>
               </div>
             </div>

@@ -8,7 +8,7 @@ const Footer = () => {
     { label: '关于', href: '#about' },
     { label: '项目', href: '#projects' },
     { label: '技能', href: '#skills' },
-    { label: '服务', href: '#services' },
+    { label: '能力', href: '#services' },
     { label: '经历', href: '#experience' },
     { label: '博客', href: '#blog' },
     { label: '联系', href: '#contact' },
@@ -27,7 +27,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-bold text-white mb-4">
-              王艺<span className="text-gradient">臻</span>
+              李沐<span className="text-gradient">远</span>
             </h3>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               机器人设计师与开发者，专注于创新机器人解决方案。
@@ -89,7 +89,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/40 text-sm">
-            © {currentYear} 王艺臻. 保留所有权利.
+            © {currentYear} 李沐远. 保留所有权利.
           </p>
           <p className="text-white/40 text-sm flex items-center gap-1">
             用 <Heart className="w-4 h-4 text-[#00a67d]" /> 和代码构建

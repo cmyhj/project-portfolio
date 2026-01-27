@@ -52,7 +52,7 @@ const Navigation = () => {
               }}
               className="text-xl font-bold text-white"
             >
-              王艺<span className="text-gradient">臻</span>
+              李沐<span className="text-gradient">远</span>
             </a>
 
             {/* Desktop nav */}
