@@ -1,7 +1,6 @@
 name: Deploy to GitHub Pages
 
 on:
-sername: cmyhj
   push:
     branches: [main]
 
