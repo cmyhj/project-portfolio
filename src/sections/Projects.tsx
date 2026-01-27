@@ -41,7 +41,7 @@ const projects: Project[] = [
     title: '协作机械臂控制系统',
     subtitle: 'Cobot Control System',
     description: '基于ROS2的七轴协作机械臂控制系统，支持力控和视觉引导操作。',
-    image: '/project1.jpg',
+    image: '/project-portfolio/project1.jpg',
     tags: ['ROS2', 'MoveIt', 'Python', 'C++'],
     category: '科研项目',
     year: '2024',

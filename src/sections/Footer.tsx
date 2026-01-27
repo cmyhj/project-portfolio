@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Mail, Heart } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,7 +16,6 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
     { icon: Mail, href: 'mailto:hello@robotics.dev', label: 'Email' },
   ];
 
@@ -30,8 +29,8 @@ const Footer = () => {
               李沐<span className="text-gradient">远</span>
             </h3>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
-              机器人设计师与开发者，专注于创新机器人解决方案。
-              用代码赋予机器生命，让科技改变生活。
+              一名深耕机器人自主导航的机器人实践者，兼具机械设计、电控开发与算法实现的
+              全栈能力。将创意转化为现实，用代码赋予机器生命。
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social, index) => (

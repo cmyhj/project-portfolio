@@ -28,7 +28,7 @@ const blogPosts: BlogPost[] = [
   {
     title: 'moveit2更新urdf',
     excerpt: '在moveit2中更新soildworks导出的机器人模型URDF。',
-    image: '/blog2.jpg',
+    image: '/project-portfolio/blog2.jpg',
     date: '2025-05-05',
     readTime: '5分钟',
     tags: ['Soildworks', 'moveit2', 'URDF'],
@@ -37,7 +37,7 @@ const blogPosts: BlogPost[] = [
   {
     title: '25赛季哨兵组研发文档',
     excerpt: '南航长空御风战队25赛季哨兵组研发文档，包括许许多多注意事项。',
-    image: '/blog3.jpg',
+    image: '/project-portfolio/blog3.jpg',
     date: '2023-12-20',
     readTime: '30分钟',
     tags: ['哨兵', 'RoboMaster', '长空御风'],
@@ -46,11 +46,11 @@ const blogPosts: BlogPost[] = [
   {
     title: '视觉组新生讲义',
     excerpt: '第十章初步介绍导航，包括机器人导航基础、SLAM算法、路径规划等内容。',
-    image: '/blog4.jpg',
+    image: '/project-portfolio/blog4.jpg',
     date: '2025-05-05',
     readTime: '20分钟',
     tags: ['导航', 'SLAM', '哨兵'],
-    link: '/新生讲义导航部分.pdf',
+    link: '/project-portfolio/新生讲义导航部分.pdf',
   },
 ];
 
