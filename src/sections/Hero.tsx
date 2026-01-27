@@ -91,7 +91,7 @@ const Hero = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/cmyhj', label: 'GitHub' },
     { icon: Mail, href: 'mailto:autism2484684043@163.com', label: 'Email' },
-    { icon: FileText, href: '/个人简历.pdf', label: 'Resume' },
+    { icon: FileText, href: '/project-portfolio/个人简历.pdf', label: 'Resume' },
   ];
 
   return (
