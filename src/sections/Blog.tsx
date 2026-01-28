@@ -19,7 +19,7 @@ const blogPosts: BlogPost[] = [
   {
     title: '哨兵环境重装指引',
     excerpt: 'RoboMaster哨兵机器人Linux上位机，从零开始搭建完整的Ubuntu22.04下运行环境配置。',
-    image: '/project-portfolio/blog1.jpg',
+    image: '/project-portfolio/blog1.png',
     date: '2024-12-30',
     readTime: '40分钟',
     tags: ['哨兵', 'SLAM', '环境配置'],
@@ -28,7 +28,7 @@ const blogPosts: BlogPost[] = [
   {
     title: 'moveit2更新urdf',
     excerpt: '在moveit2中更新soildworks导出的机器人模型URDF。',
-    image: '/project-portfolio/blog2.jpg',
+    image: '/project-portfolio/blog2.png',
     date: '2025-05-05',
     readTime: '5分钟',
     tags: ['Soildworks', 'moveit2', 'URDF'],
@@ -46,7 +46,7 @@ const blogPosts: BlogPost[] = [
   {
     title: '视觉组新生讲义',
     excerpt: '第十章初步介绍导航，包括机器人导航基础、SLAM算法、路径规划等内容。',
-    image: '/project-portfolio/blog4.jpg',
+    image: '/project-portfolio/blog4.png',
     date: '2025-05-05',
     readTime: '20分钟',
     tags: ['导航', 'SLAM', '哨兵'],

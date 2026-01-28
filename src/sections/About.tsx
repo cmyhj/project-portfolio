@@ -119,33 +119,47 @@ const About = () => {
 
           {/* Right stats */}
           <div ref={statsRef} className="grid grid-cols-2 gap-6">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="relative p-8 glass-card rounded-2xl group hover:bg-[#00a67d]/5 transition-all duration-500"
-              >
-                {/* Glow effect */}
-                <div className="absolute inset-0 rounded-2xl bg-[#00a67d]/0 group-hover:bg-[#00a67d]/10 transition-colors duration-500" />
-                
-                <div className="relative z-10">
-                  <span
-                    className="stat-number block text-5xl lg:text-6xl font-bold text-[#00a67d] mb-2"
-                    data-target={stat.number}
-                  >
-                    0
-                    {stat.suffix}
-                  </span>
+            {stats.map((stat, index) => {
+              const bgImages = ['/bgImages1.jpg', '/bgImages2.jpg', '/bgImages3.jpg', '/bgImages4.jpg'];
+              return (
+                <div
+                  key={index}
+                  className="relative p-8 glass-card rounded-2xl group hover:bg-[#00a67d]/5 transition-all duration-500 overflow-hidden"
+                >
+                  {/* Background image */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+                    style={{ backgroundImage: `url(${bgImages[index]})` }}
+                  />
+                  
+                  {/* Dark gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/70" />
+                  
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 rounded-2xl bg-[#00a67d]/0 group-hover:bg-[#00a67d]/10 transition-colors duration-500" />
+                  
+                  <div className="relative z-10">
+                  <div className="block text-5xl lg:text-6xl font-bold text-[#00a67d] mb-2">
+                    <span
+                      className="stat-number"
+                      data-target={stat.number}
+                    >
+                      0
+                    </span>
+                    {stat.suffix && <span>{stat.suffix}</span>}
+                  </div>
                   <span className="text-white/60 text-sm uppercase tracking-wider">
                     {stat.label}
                   </span>
                 </div>
 
-                {/* Corner accent */}
-                <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden rounded-tr-2xl">
-                  <div className="absolute top-0 right-0 w-32 h-0.5 bg-[#00a67d]/30 transform rotate-45 translate-x-8 -translate-y-8" />
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden rounded-tr-2xl">
+                    <div className="absolute top-0 right-0 w-32 h-0.5 bg-[#00a67d]/30 transform rotate-45 translate-x-8 -translate-y-8" />
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

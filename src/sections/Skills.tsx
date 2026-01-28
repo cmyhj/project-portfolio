@@ -67,10 +67,18 @@ const Skills = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full py-24 lg:py-32"
+      className="relative w-full py-24 lg:py-32 overflow-hidden"
       id="skills"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      {/* Background image with dark gradient overlay */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(/bgImages_skill.jpg)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/80" />
+      </div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Section header */}
         <div className="mb-16">
           <div className="flex items-center gap-4 mb-6">

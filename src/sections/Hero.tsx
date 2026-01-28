@@ -173,7 +173,7 @@ const Hero = () => {
               {/* Main image container */}
               <div className="relative w-72 h-96 sm:w-80 sm:h-[28rem] lg:w-96 lg:h-[32rem] rounded-2xl overflow-hidden glass-card">
                 <img
-                  src="/project-portfolio/portrait.jpg"
+                  src="/project-portfolio/portrait.png"
                   alt="李沐远"
                   className="w-full h-full object-cover"
                 />

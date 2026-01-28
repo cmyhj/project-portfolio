@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { toast } from 'sonner';
-import { Mail, MapPin, Phone, Send, Github, Twitter } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Github, Twitter, MessageCircle, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -50,6 +50,18 @@ const Contact = () => {
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
+  const handleCopy = (text: string, label: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      toast.success('已复制到剪贴板', {
+        description: `${label}: ${text}`,
+      });
+    }).catch(() => {
+      toast.error('复制失败', {
+        description: '请手动复制',
+      });
+    });
+  };
+
   const contactInfo = [
     { icon: Mail, label: '邮箱', value: 'autism2484684043@163.com' },
     { icon: Phone, label: '电话', value: '+86 189 6501 3309' },
@@ -59,6 +71,11 @@ const Contact = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/autism2484684043', label: 'GitHub' },
     { icon: Twitter, href: 'https://twitter.com/autism2484684043', label: 'Twitter' },
+  ];
+
+  const contactApps = [
+    { icon: MessageCircle, value: '2484684043', label: 'QQ' },
+    { icon: MessageSquare, value: 'andy18965013309', label: '微信' },
   ];
 
   return (
@@ -106,7 +123,7 @@ const Contact = () => {
             {/* Social links */}
             <div>
               <h3 className="text-white font-semibold mb-4">社交媒体</h3>
-              <div className="flex gap-4">
+              <div className="flex gap-4 mb-4">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
@@ -121,10 +138,27 @@ const Contact = () => {
                   </a>
                 ))}
               </div>
+
+              <h3 className="text-white font-semibold mb-4">联系方式</h3>
+              <div className="flex gap-4">
+                {contactApps.map((app, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleCopy(app.value, app.label)}
+                    className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center
+                             hover:bg-[#00a67d]/20 hover:scale-110 transition-all duration-300 cursor-pointer"
+                    aria-label={app.label}
+                    title={`点击复制${app.label}`}
+                  >
+                    <app.icon className="w-5 h-5 text-[#00a67d]" />
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Right form */}
+          {/*
           <div className="p-8 glass-card rounded-2xl">
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
@@ -190,6 +224,7 @@ const Contact = () => {
               </Button>
             </form>
           </div>
+          */}
         </div>
       </div>
     </section>

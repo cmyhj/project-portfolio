@@ -25,22 +25,22 @@ const experiences: ExperienceItem[] = [
     achievements: [
       '开发基于STM32的电控系统，实现仿生软体尺蠖机器人粘附运动',
       '研发爬壁机器人，实现负角度（80°+）越棱迁移',
-      '学业成绩良好',
+      '学业成绩优异，荣获24以及25年度国家奖学金',
     ],
-    image: '/work1.jpg',
+    image: '/project-portfolio/work1.jpg',
   },
   {
     company: '南航长空御风机器人战队',
     role: '哨兵组组长',
-    period: '2020 - 2022',
-    location: '上海',
+    period: '2024 - 2025',
+    location: '南京',
     description: '负责哨兵机器人导航与决策模块以及部分电控，领导6人技术团队。',
     achievements: [
       '开发基于LIDAR的SLAM算法，实现环境地图构建',
       '实现基于A*/TEB算法的路径规划，导航成功率95%',
       '参与机器人导航系统的硬件选型和调试',
     ],
-    image: '/work2.jpg',
+    image: '/project-portfolio/work2.png',
   },
 ];
 
