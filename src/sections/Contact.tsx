@@ -70,7 +70,6 @@ const Contact = () => {
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com/autism2484684043', label: 'GitHub' },
-    { icon: Twitter, href: 'https://twitter.com/autism2484684043', label: 'Twitter' },
   ];
 
   const contactApps = [

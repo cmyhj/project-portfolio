@@ -105,15 +105,6 @@ const Blog = () => {
               分享与<span className="text-gradient">探索</span>
             </h2>
           </div>
-          <a
-            href="https://blog.example.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[#00a67d] hover:text-[#00d4aa] transition-colors"
-          >
-            <span>查看全部文章</span>
-            <ArrowUpRight className="w-5 h-5" />
-          </a>
         </div>
 
         {/* Blog grid */}

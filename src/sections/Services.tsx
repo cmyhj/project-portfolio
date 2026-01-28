@@ -87,9 +87,9 @@ const Services = () => {
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/project-portfolio/bgImages_skill.jpg)' }}
+          style={{ backgroundImage: 'url(/project-portfolio/bgImages_service.jpg)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/65 to-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/65 to-black/80" />
       </div>
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Section header */}
