@@ -49,10 +49,10 @@ function App() {
         <Hero />
         <About />
         <Projects />
+        <Blog />
         <Skills />
         <Services />
         <Experience />
-        <Blog />
         <Contact />
       </main>
 

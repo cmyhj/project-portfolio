@@ -133,7 +133,7 @@ const About = () => {
                   />
                   
                   {/* Dark gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/70" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-black/60" />
                   
                   {/* Glow effect */}
                   <div className="absolute inset-0 rounded-2xl bg-[#00a67d]/0 group-hover:bg-[#00a67d]/10 transition-colors duration-500" />
