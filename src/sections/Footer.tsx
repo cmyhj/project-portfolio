@@ -79,7 +79,7 @@ const Footer = () => {
               </p>
               <p className="text-white/60">
                 <span className="text-white/80">地址：</span>
-                南京航空航天大学 机电学院
+                南京航空航天大学 将军路校区
               </p>
             </div>
           </div>

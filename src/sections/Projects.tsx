@@ -222,7 +222,7 @@ const projects: Project[] = [
     title: '3D视觉识别装置',
     subtitle: 'RoboCup China - Advanced Vision 3D Recognition',
     description: '基于RGBD相机的静态与动态场景下日用品、副食品、饮料及水果的3D识别与计数系统，支持旋转目标台实时检测。',
-    image: '/project-portfolio/project1.jpg',
+    image: '/project-portfolio/project17.jpg',
     tags: ['Robotics', 'Computer Vision', '3D Perception', 'Edge AI', 'RGBD Camera'],
     category: '竞赛项目',
     year: '2024',
@@ -236,7 +236,7 @@ const projects: Project[] = [
   },
   {
     id: 12,
-    title: '工创赛智能物流AGV——嵌入式高速视觉定位系统',
+    title: '工创赛智能物流AGV-嵌入式高速视觉定位系统',
     subtitle: 'High-Speed Embedded Vision for Industrial AGV',
     description: '面向工业物流场景的轻量级AGV视觉定位解决方案，在资源极度受限的嵌入式平台上实现亚毫米级色环/色块识别与动态路径校准，满足高精度码垛与低功耗运行的双重约束。',
     image: '/project-portfolio/project6.png',

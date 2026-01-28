@@ -21,14 +21,14 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: '机器人设计', level: 90, icon: Bot, category: '核心技能' },
-  { name: '机械设计', level: 85, icon: Cog, category: '核心技能' },
-  { name: 'ROS/ROS2', level: 95, icon: Network, category: '软件' },
-  { name: 'Python', level: 88, icon: Code, category: '软件' },
-  { name: 'C++', level: 85, icon: Code, category: '软件' },
-  { name: '计算机视觉', level: 92, icon: Eye, category: 'AI' },
-  { name: '嵌入式系统', level: 90, icon: Cpu, category: '硬件' },
-  { name: '版本控制', level: 90, icon: GitBranch, category: '工具' },
+  { name: '机器人设计', level: 70, icon: Bot, category: '核心技能' },
+  { name: '机械设计', level: 65, icon: Cog, category: '核心技能' },
+  { name: 'ROS/ROS2', level: 85, icon: Network, category: '软件' },
+  { name: 'Python', level: 60, icon: Code, category: '软件' },
+  { name: 'C++', level: 65, icon: Code, category: '软件' },
+  { name: '计算机视觉', level: 75, icon: Eye, category: 'AI' },
+  { name: '嵌入式系统', level: 80, icon: Cpu, category: '硬件' },
+  { name: '版本控制', level: 70, icon: GitBranch, category: '工具' },
 ];
 
 const skillCategories = ['全部', '核心技能', '软件', 'AI', '硬件', '工具'];
