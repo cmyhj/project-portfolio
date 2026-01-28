@@ -2,7 +2,7 @@ import { useEffect, useRef/*, useState */} from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { toast } from 'sonner';
-import { Mail, MapPin, Phone, /*Send, */Github, Twitter, MessageCircle, MessageSquare } from 'lucide-react';
+import { Mail, MapPin, Phone, /*Send, */Github,/* Twitter ,*/ MessageCircle, MessageSquare } from 'lucide-react';
 // import { Button } from '@/components/ui/button';
 // import { Input } from '@/components/ui/input';
 // import { Textarea } from '@/components/ui/textarea';
