@@ -40,7 +40,7 @@ const experiences: ExperienceItem[] = [
       '实现基于A*/TEB算法的路径规划，导航成功率95%',
       '参与机器人导航系统的硬件选型和调试',
     ],
-    image: '/project-portfolio/work2.png',
+    image: '/project-portfolio/work2.jpg',
   },
 ];
 

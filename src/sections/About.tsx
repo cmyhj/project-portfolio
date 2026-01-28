@@ -55,8 +55,8 @@ const About = () => {
   }, []);
 
   const stats = [
-    { number: 20, label: '研发机器人', suffix: '+' },
-    { number: 10, label: '国家级奖项', suffix: '' },
+    { number: 16, label: '参与研发机器人', suffix: '款' },
+    { number: 10, label: '国家级奖项', suffix: '项' },
     { number: 300, label: '社区技术影响', suffix: '+' },
     { number: 10, label: '项目工程', suffix: '+' },
   ];
@@ -120,7 +120,7 @@ const About = () => {
           {/* Right stats */}
           <div ref={statsRef} className="grid grid-cols-2 gap-6">
             {stats.map((stat, index) => {
-              const bgImages = ['/bgImages1.jpg', '/bgImages2.jpg', '/bgImages3.jpg', '/bgImages4.jpg'];
+              const bgImages = ['/project-portfolio/bgImages1.jpg', '/project-portfolio/bgImages2.jpg', '/project-portfolio/bgImages3.jpg', '/project-portfolio/bgImages4.jpg'];
               return (
                 <div
                   key={index}

@@ -74,7 +74,7 @@ const Skills = () => {
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/bgImages_skill.jpg)' }}
+          style={{ backgroundImage: 'url(/project-portfolio/bgImages_skill.jpg)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/80" />
       </div>
