@@ -1,7 +1,7 @@
 import { useEffect, useRef/*, useState */} from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { toast } from 'sonner';
+import { toast } from 'sonner';
 import { Mail, MapPin, Phone, /*Send, */Github, Twitter, MessageCircle, MessageSquare } from 'lucide-react';
 // import { Button } from '@/components/ui/button';
 // import { Input } from '@/components/ui/input';
@@ -50,17 +50,17 @@ const Contact = () => {
   //   setFormData({ name: '', email: '', subject: '', message: '' });
   // };
 
-  // const handleCopy = (text: string, label: string) => {
-  //   navigator.clipboard.writeText(text).then(() => {
-  //     toast.success('已复制到剪贴板', {
-  //       description: `${label}: ${text}`,
-  //     });
-  //   }).catch(() => {
-  //     toast.error('复制失败', {
-  //       description: '请手动复制',
-  //     });
-  //   });
-  // };
+  const handleCopy = (text: string, label: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      toast.success('已复制到剪贴板', {
+        description: `${label}: ${text}`,
+      });
+    }).catch(() => {
+      toast.error('复制失败', {
+        description: '请手动复制',
+      });
+    });
+  };
 
   const contactInfo = [
     { icon: Mail, label: '邮箱', value: 'autism2484684043@163.com' },
