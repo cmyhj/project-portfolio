@@ -116,7 +116,7 @@ const Skills = () => {
         </div>
 
         {/* Skills grid */}
-        <div ref={barsRef} className="grid lg:grid-cols-2 gap-x-12 gap-y-8">
+        <div ref={barsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
           {skills.map((skill, index) => (
             <div key={index} className="group">
               <div className="flex items-center justify-between mb-3">
@@ -147,8 +147,8 @@ const Skills = () => {
 
         {/* Skill categories */}
         <div className="mt-16 pt-16 border-t border-white/10">
-          <h3 className="text-xl font-semibold text-white mb-8">专业领域</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h3 className="text-xl font-semibold text-white mb-6">专业领域</h3>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {skillCategories.slice(1).map((category, index) => {
               const categorySkills = skills.filter((s) => s.category === category);
               return (
