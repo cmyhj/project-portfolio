@@ -29,7 +29,7 @@ const Footer = () => {
               李沐<span className="text-gradient">远</span>
             </h3>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
-              一名深耕机器人自主导航的机器人实践者，兼具机械设计、电控开发与算法实现的
+              一名机器人实践者，兼具机械设计、电控开发与算法实现的
               全栈能力。将创意转化为现实，用代码赋予机器生命。
             </p>
             <div className="flex gap-4">

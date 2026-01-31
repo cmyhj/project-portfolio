@@ -138,7 +138,7 @@ const Hero = () => {
               ref={subtitleRef}
               className="text-lg text-white/70 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed"
             >
-              一名深耕机器人自主导航的实践者，兼具机械设计、电控开发与算法实现的
+              兼具机械设计、电控开发与算法实现的
               全栈能力。将创意转化为现实，用代码赋予机器生命。
             </p>
 
