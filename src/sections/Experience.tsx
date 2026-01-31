@@ -34,7 +34,7 @@ const experiences: ExperienceItem[] = [
     role: '哨兵组组长',
     period: '2024 - 2025',
     location: '南京',
-    description: '负责哨兵机器人导航与决策模块以及部分电控，领导6人技术团队。',
+    description: '负责哨兵机器人导航与决策模块以及部分电控，领导7人技术团队。',
     achievements: [
       '开发基于LIDAR的SLAM算法，实现环境地图构建',
       '实现基于A*/TEB算法的路径规划，导航成功率95%',

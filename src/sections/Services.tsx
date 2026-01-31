@@ -23,25 +23,25 @@ const services: Service[] = [
     icon: Bot,
     title: '机器人设计',
     description: '从概念到原型，提供完整的机器人系统设计服务。',
-    features: ['机械结构设计', '运动学分析', '控制系统集成', '原型制造'],
+    features: ['整机方案设计', '机械结构设计','控制系统集成', '原型制造'],
   },
   {
     icon: Cog,
     title: '机械设计',
     description: '精密机械零部件设计与仿真分析。',
-    features: ['CAD建模', '有限元分析', '运动仿真', '优化设计'],
+    features: ['CAD建模', '运动学分析', '强度校核', '制作装配'],
   },
   {
     icon: Monitor,
     title: '嵌入式系统设计',
     description: '基于STM32等平台的嵌入式系统设计与开发。',
-    features: ['PCB设计', '通信接口设计', '实时操作系统集成', '代码优化'],
+    features: ['PCB设计与制作', '实时操作系统集成', '传感器集成','调试测试'],
   },
   {
     icon: Code,
     title: '软件开发',
     description: 'ROS2驱动开发与机器人应用程序。',
-    features: ['驱动开发', '算法实现', '界面开发', '系统集成'],
+    features: ['模块整合', '算法实现', '通信接口设计', '功能集成'],
   },
 ];
 

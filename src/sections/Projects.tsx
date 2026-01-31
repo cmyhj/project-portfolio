@@ -167,9 +167,9 @@ const projects: Project[] = [
   },
   {
     id: 8,
-    title: 'Phigros音游自动打歌系统',
+    title: '音游自动打歌系统',
     subtitle: 'Phigros Auto-Play Vision System',
-    description: '基于ROS2和OpenCV开发Phigros音游自动打歌系统，实现音符检测、判定线识别与精准点击输出。',
+    description: '基于ROS2和OpenCV开发Phigros音游（模拟器）自动打歌系统，实现音符检测、判定线识别与精准点击输出。',
     image: '/project-portfolio/project13.png',
     tags: ['Computer Vision', 'ROS2', 'OpenCV', 'C++'],
     category: '个人项目',
@@ -314,9 +314,9 @@ const projects: Project[] = [
     year: '2023',
     details: {
       challenge: '扑翼飞行器（Ornithopter）因机翼拍动产生振动，传统起落架难以兼容不同翼展与重量机型；需实现复杂地面（草地/砂石/斜坡）的自适应着陆缓冲，且要求低成本、快速拆装与功能扩展接口。',
-      solution: '仿生学设计：模拟鸽爪肌腱被动抓握机制，设计弹性四连杆缓冲结构，着陆时通过自重触发爪式抱合增强摩擦；采用模块化快拆接口，支持相机/传感器载荷即插即用；基于SolidWorks参数化建模适配不同机型。',
-      technologies: ['SolidWorks', '3D Printing', 'Finite Element Analysis', 'Mechanical Design'],
-      results: '优秀结题评价。'
+      solution: '通过查阅相关论文，设计了一种仿生鸽爪式自适应着陆架，学习了如何查阅论文、Solidworks基础等设计技能。',
+      technologies: ['SolidWorks', 'Mechanical Design'],
+      results: '获优秀结题评价。'
     },
   },
 ];
