@@ -58,7 +58,7 @@ const About = () => {
     { number: 16, label: '参与研发机器人', suffix: '款', link: '#projects' },
     { number: 10, label: '国家级奖项', suffix: '项' },
     { number: 300, label: '社区技术影响', suffix: '+' },
-    { number: 10, label: '项目工程', suffix: '+', link: 'https://github.com/autism2484684043' },
+    { number: 10, label: '项目工程', suffix: '+', link: 'https://github.com/cmyhj' },
   ];
 
   const highlights = [

@@ -8,7 +8,14 @@ import {
   Eye,
   Cpu,
   Network,
-  GitBranch,
+  Terminal,
+  Map,
+  Navigation,
+  Box,
+  Calculator,
+  FileText,
+  Book,
+  BarChart,
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -21,17 +28,33 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: '机器人设计', level: 70, icon: Bot, category: '核心技能' },
-  { name: '机械设计', level: 65, icon: Cog, category: '核心技能' },
-  { name: 'ROS/ROS2', level: 85, icon: Network, category: '软件' },
-  { name: 'Python', level: 60, icon: Code, category: '软件' },
-  { name: 'C++', level: 65, icon: Code, category: '软件' },
-  { name: '计算机视觉', level: 75, icon: Eye, category: 'AI' },
-  { name: '嵌入式系统', level: 80, icon: Cpu, category: '硬件' },
-  { name: '版本控制', level: 70, icon: GitBranch, category: '工具' },
+  { name: 'C/C++', level: 85, icon: Code, category: '编程语言' },
+  { name: 'Python', level: 75, icon: Code, category: '编程语言' },
+  { name: 'HTML', level: 70, icon: Code, category: '编程语言' },
+  { name: 'Linux', level: 85, icon: Terminal, category: '编程语言' },
+  { name: 'CMake', level: 80, icon: Code, category: '编程语言' },
+  { name: 'GDScript', level: 80, icon: Code, category: '编程语言' },
+  { name: 'ROS2', level: 90, icon: Network, category: '机器人' },
+  { name: 'MoveIt2', level: 85, icon: Bot, category: '机器人' },
+  { name: 'Nav2', level: 90, icon: Map, category: 'SLAM' },
+  { name: '路径规划(A*,TEB等)', level: 90, icon: Navigation, category: 'SLAM' },
+  { name: 'LIO算法', level: 85, icon: Map, category: 'SLAM' },
+  { name: 'OpenCV', level: 80, icon: Eye, category: '视觉' },
+  { name: 'PCL', level: 85, icon: Box, category: 'SLAM' },
+  { name: 'STM32', level: 90, icon: Cpu, category: '嵌入式' },
+  { name: 'FreeRTOS', level: 85, icon: Cpu, category: '嵌入式' },
+  { name: 'PCB设计', level: 80, icon: Cpu, category: '嵌入式' },
+  { name: 'OpenMV', level: 90, icon: Eye, category: '视觉' },
+  { name: '传感器驱动', level: 85, icon: Cpu, category: '嵌入式' },
+  { name: 'SolidWorks', level: 85, icon: Cog, category: '机械设计' },
+  { name: 'AutoCAD', level: 80, icon: Cog, category: '机械设计' },
+  { name: 'MATLAB', level: 70, icon: Calculator, category: '学术' },
+  { name: 'LaTeX', level: 75, icon: FileText, category: '学术' },
+  { name: 'Zotero', level: 80, icon: Book, category: '学术' },
+  { name: 'SPSS', level: 65, icon: BarChart, category: '学术' },
 ];
 
-const skillCategories = ['全部', '核心技能', '软件', 'AI', '硬件', '工具'];
+const skillCategories = ['全部', '编程语言', '机器人', '视觉', 'SLAM', '嵌入式', '机械设计', '学术'];
 
 const Skills = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -134,11 +157,13 @@ const Skills = () => {
                   className="p-6 glass-card rounded-xl hover:bg-[#00a67d]/5 transition-colors group"
                 >
                   <div className="w-12 h-12 rounded-lg bg-[#00a67d]/10 flex items-center justify-center mb-4 group-hover:bg-[#00a67d]/20 transition-colors">
-                    {category === '核心技能' && <Bot className="w-6 h-6 text-[#00a67d]" />}
-                    {category === '软件' && <Code className="w-6 h-6 text-[#00a67d]" />}
-                    {category === 'AI' && <Eye className="w-6 h-6 text-[#00a67d]" />}
-                    {category === '硬件' && <Cpu className="w-6 h-6 text-[#00a67d]" />}
-                    {category === '工具' && <GitBranch className="w-6 h-6 text-[#00a67d]" />}
+                    {category === '编程语言' && <Code className="w-6 h-6 text-[#00a67d]" />}
+                    {category === '机器人' && <Bot className="w-6 h-6 text-[#00a67d]" />}
+                    {category === '视觉' && <Eye className="w-6 h-6 text-[#00a67d]" />}
+                    {category === 'SLAM' && <Map className="w-6 h-6 text-[#00a67d]" />}
+                    {category === '嵌入式' && <Cpu className="w-6 h-6 text-[#00a67d]" />}
+                    {category === '机械设计' && <Cog className="w-6 h-6 text-[#00a67d]" />}
+                    {category === '学术' && <Book className="w-6 h-6 text-[#00a67d]" />}
                   </div>
                   <h4 className="text-white font-semibold mb-2">{category}</h4>
                   <div className="flex flex-wrap gap-1">
