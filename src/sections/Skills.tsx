@@ -34,17 +34,17 @@ const skills: Skill[] = [
   { name: 'Linux', level: 85, icon: Terminal, category: '编程语言' },
   { name: 'CMake', level: 80, icon: Code, category: '编程语言' },
   { name: 'GDScript', level: 80, icon: Code, category: '编程语言' },
-  { name: 'ROS2', level: 90, icon: Network, category: '机器人' },
-  { name: 'MoveIt2', level: 85, icon: Bot, category: '机器人' },
+  { name: 'ROS2', level: 90, icon: Network, category: '算法/库' },
+  { name: 'MoveIt2', level: 85, icon: Bot, category: '算法/库' },
   { name: 'Nav2', level: 90, icon: Map, category: 'SLAM' },
   { name: '路径规划(A*,TEB等)', level: 90, icon: Navigation, category: 'SLAM' },
   { name: 'LIO算法', level: 85, icon: Map, category: 'SLAM' },
-  { name: 'OpenCV', level: 80, icon: Eye, category: '视觉' },
+  { name: 'OpenCV', level: 80, icon: Eye, category: '算法/库' },
   { name: 'PCL', level: 85, icon: Box, category: 'SLAM' },
   { name: 'STM32', level: 90, icon: Cpu, category: '嵌入式' },
   { name: 'FreeRTOS', level: 85, icon: Cpu, category: '嵌入式' },
   { name: 'PCB设计', level: 80, icon: Cpu, category: '嵌入式' },
-  { name: 'OpenMV', level: 90, icon: Eye, category: '视觉' },
+  { name: 'OpenMV', level: 90, icon: Eye, category: '嵌入式' },
   { name: '传感器驱动', level: 85, icon: Cpu, category: '嵌入式' },
   { name: 'SolidWorks', level: 85, icon: Cog, category: '机械设计' },
   { name: 'AutoCAD', level: 80, icon: Cog, category: '机械设计' },
@@ -54,7 +54,7 @@ const skills: Skill[] = [
   { name: 'SPSS', level: 65, icon: BarChart, category: '学术' },
 ];
 
-const skillCategories = ['全部', '编程语言', '机器人', '视觉', 'SLAM', '嵌入式', '机械设计', '学术'];
+const skillCategories = ['全部', '编程语言', '算法/库', 'SLAM', '嵌入式', '机械设计', '学术'];
 
 const Skills = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -158,8 +158,7 @@ const Skills = () => {
                 >
                   <div className="w-12 h-12 rounded-lg bg-[#00a67d]/10 flex items-center justify-center mb-4 group-hover:bg-[#00a67d]/20 transition-colors">
                     {category === '编程语言' && <Code className="w-6 h-6 text-[#00a67d]" />}
-                    {category === '机器人' && <Bot className="w-6 h-6 text-[#00a67d]" />}
-                    {category === '视觉' && <Eye className="w-6 h-6 text-[#00a67d]" />}
+                    {category === '算法/库' && <Bot className="w-6 h-6 text-[#00a67d]" />}
                     {category === 'SLAM' && <Map className="w-6 h-6 text-[#00a67d]" />}
                     {category === '嵌入式' && <Cpu className="w-6 h-6 text-[#00a67d]" />}
                     {category === '机械设计' && <Cog className="w-6 h-6 text-[#00a67d]" />}
