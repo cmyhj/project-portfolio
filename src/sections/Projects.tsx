@@ -66,9 +66,10 @@ const projects: Project[] = [
     year: '2025',
     githubUrl: 'https://github.com/cmyhj/ClimBot',
     demoUrl: '/project-portfolio/project3-demo.mp4',
+    videoUrl: '/project-portfolio/project3-video.mp4',
     details: {
       challenge: '仿壁虎粘附机构在粗糙表面的可靠性控制，以及90°内外直角过渡时的力矩平衡与姿态保持，需解决脚掌剥离/粘附的时序同步问题。',
-      solution: '设计被动顺应性踝关节与柔性仿生足垫，实现接触力自平衡；开发基于有限状态机的多足协调控制算法，优化脚掌剥离轨迹实现平滑壁面过渡。',
+      solution: '设计被动顺应性踝关节与柔性仿生足垫，实现接触角度自平衡；开发基于OOP的多足协调控制算法，优化脚掌剥离轨迹实现平滑壁面过渡。',
       technologies: ['STM32', 'FreeRTOS', 'SolidWorks',  'Control Theory'],
       results: '实现全倾角表面（0-360°）稳定附着，90°越棱迁移成功率>85%，自适应粗糙度范围Ra 0.8-25μm。'
     },

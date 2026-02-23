@@ -45,13 +45,13 @@ const skills: Skill[] = [
   { name: 'FreeRTOS', level: 85, icon: Cpu, category: '嵌入式' },
   { name: 'PCB设计', level: 80, icon: Cpu, category: '嵌入式' },
   { name: 'OpenMV', level: 90, icon: Eye, category: '嵌入式' },
-  { name: '传感器驱动', level: 85, icon: Cpu, category: '嵌入式' },
+  { name: 'Abaqus', level: 65, icon: Cog, category: '机械设计' },
   { name: 'SolidWorks', level: 85, icon: Cog, category: '机械设计' },
   { name: 'AutoCAD', level: 80, icon: Cog, category: '机械设计' },
   { name: 'MATLAB', level: 70, icon: Calculator, category: '学术' },
   { name: 'LaTeX', level: 75, icon: FileText, category: '学术' },
   { name: 'Zotero', level: 80, icon: Book, category: '学术' },
-  { name: 'SPSS', level: 65, icon: BarChart, category: '学术' },
+  { name: 'Origin', level: 75, icon: BarChart, category: '学术' },
 ];
 
 const skillCategories = ['全部', '编程语言', '算法/库', 'SLAM', '嵌入式', '机械设计', '学术'];

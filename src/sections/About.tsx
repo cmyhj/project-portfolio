@@ -86,8 +86,8 @@ const About = () => {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">
-              将复杂问题转化为
-              <span className="text-gradient"> 优雅解决方案</span>
+              在硬件与算法的交界处
+              <span className="text-gradient"> 寻找机器人的最优解</span>
             </h2>
 
             <div className="space-y-6 text-white/70 leading-relaxed">
