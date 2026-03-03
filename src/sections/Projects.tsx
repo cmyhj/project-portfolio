@@ -334,8 +334,13 @@ const Projects = () => {
   // Filter projects based on category and search
   const filteredProjects = useMemo(() => {
     return projects.filter((project) => {
-      const matchesCategory = 
-        selectedCategory === (language === 'zh' ? '全部' : 'All') || project.category === selectedCategory;
+      const isAllCategory = selectedCategory === (language === 'zh' ? '全部' : 'All');
+      const matchesCategory = isAllCategory || 
+        (language === 'zh' ? project.category === selectedCategory : 
+         (selectedCategory === 'Course' && project.category === '课程项目') ||
+         (selectedCategory === 'Competition' && project.category === '竞赛项目') ||
+         (selectedCategory === 'Research' && project.category === '科研项目') ||
+         (selectedCategory === 'Personal' && project.category === '个人项目'));
       const matchesSearch = 
         project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||

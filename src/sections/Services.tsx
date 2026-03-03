@@ -8,46 +8,63 @@ import {
   Code,
   ArrowUpRight,
 } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface Service {
   icon: React.ElementType;
   title: string;
+  titleEn: string;
   description: string;
+  descriptionEn: string;
   features: string[];
+  featuresEn: string[];
 }
 
 const services: Service[] = [
   {
     icon: Bot,
     title: '机器人设计',
+    titleEn: 'Robot Design',
     description: '从概念到原型，提供完整的机器人系统设计服务。',
+    descriptionEn: 'From concept to prototype, providing complete robot system design services.',
     features: ['整机方案设计', '机械结构设计','控制系统集成', '原型制造'],
+    featuresEn: ['Overall solution design', 'Mechanical structure design', 'Control system integration', 'Prototype manufacturing'],
   },
   {
     icon: Cog,
     title: '机械设计',
+    titleEn: 'Mechanical Design',
     description: '精密机械零部件设计与仿真分析。',
+    descriptionEn: 'Precision mechanical component design and simulation analysis.',
     features: ['CAD建模', '运动学分析', '强度校核', '制作装配'],
+    featuresEn: ['CAD modeling', 'Kinematics analysis', 'Strength verification', 'Manufacturing and assembly'],
   },
   {
     icon: Monitor,
     title: '嵌入式系统设计',
+    titleEn: 'Embedded System Design',
     description: '基于STM32等平台的嵌入式系统设计与开发。',
+    descriptionEn: 'Embedded system design and development based on STM32 and other platforms.',
     features: ['PCB设计与制作', '实时操作系统集成', '传感器集成','调试测试'],
+    featuresEn: ['PCB design and manufacturing', 'Real-time OS integration', 'Sensor integration', 'Debugging and testing'],
   },
   {
     icon: Code,
     title: '软件开发',
+    titleEn: 'Software Development',
     description: 'ROS2驱动开发与机器人应用程序。',
+    descriptionEn: 'ROS2 driver development and robot applications.',
     features: ['模块整合', '算法实现', '通信接口设计', '功能集成'],
+    featuresEn: ['Module integration', 'Algorithm implementation', 'Communication interface design', 'Function integration'],
   },
 ];
 
 const Services = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -95,18 +112,18 @@ const Services = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="w-12 h-0.5 bg-[#00a67d]" />
-            <span className="text-[#00a67d] text-sm uppercase tracking-widest font-medium">
-              能力范围
-            </span>
-            <div className="w-12 h-0.5 bg-[#00a67d]" />
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-            我能<span className="text-gradient">做什么</span>
-          </h2>
-          <p className="text-white/60 max-w-2xl mx-auto">
-            从设计到实现的全方位机器人技术，助力创新项目落地。
-          </p>
+              <div className="w-12 h-0.5 bg-[#00a67d]" />
+              <span className="text-[#00a67d] text-sm uppercase tracking-widest font-medium">
+                {language === 'zh' ? '能力范围' : 'Capabilities'}
+              </span>
+              <div className="w-12 h-0.5 bg-[#00a67d]" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+              {language === 'zh' ? '我能' : 'What I Can'}<span className="text-gradient">{language === 'zh' ? '做什么' : ' Do'}</span>
+            </h2>
+            <p className="text-white/60 max-w-2xl mx-auto">
+              {language === 'zh' ? '从设计到实现的全方位机器人技术，助力创新项目落地。' : 'Comprehensive robotics technology from design to implementation, helping innovative projects come to life.'}
+            </p>
         </div>
 
         {/* Services grid */}
@@ -128,15 +145,15 @@ const Services = () => {
 
               {/* Content */}
               <h3 className="relative text-xl font-bold text-white mb-3 group-hover:text-[#00a67d] transition-colors">
-                {service.title}
+                {language === 'zh' ? service.title : service.titleEn}
               </h3>
               <p className="relative text-white/60 text-sm mb-6">
-                {service.description}
+                {language === 'zh' ? service.description : service.descriptionEn}
               </p>
 
               {/* Features */}
               <ul className="relative space-y-2 mb-6">
-                {service.features.map((feature, i) => (
+                {(language === 'zh' ? service.features : service.featuresEn).map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm text-white/50">
                     <div className="w-1 h-1 bg-[#00a67d] rounded-full" />
                     {feature}
@@ -147,7 +164,7 @@ const Services = () => {
               {/* Arrow */}
               <div className="relative flex items-center gap-2 text-[#00a67d] text-sm font-medium
                               opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                <span>了解更多</span>
+                <span>{language === 'zh' ? '了解更多' : 'Learn more'}</span>
                 <ArrowUpRight className="w-4 h-4" />
               </div>
 
@@ -159,13 +176,13 @@ const Services = () => {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <p className="text-white/60 mb-6">有项目想法？让我们一起实现它。</p>
+          <p className="text-white/60 mb-6">{language === 'zh' ? '有项目想法？让我们一起实现它。' : 'Have a project idea? Let\'s make it happen together.'}</p>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-8 py-3 bg-[#00a67d] hover:bg-[#00d4aa] text-white font-medium rounded-full
                        transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,166,125,0.3)]"
           >
-            <span>开始合作</span>
+            <span>{language === 'zh' ? '开始合作' : 'Start cooperation'}</span>
             <ArrowUpRight className="w-5 h-5" />
           </a>
         </div>

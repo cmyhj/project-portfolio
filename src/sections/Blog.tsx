@@ -2,54 +2,75 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, Clock, Tag } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface BlogPost {
   title: string;
+  titleEn: string;
   excerpt: string;
+  excerptEn: string;
   image: string;
   date: string;
   readTime: string;
+  readTimeEn: string;
   tags: string[];
+  tagsEn: string[];
   link: string;
 }
 
 const blogPosts: BlogPost[] = [
   {
     title: '哨兵环境重装指引',
+    titleEn: 'Sentry Environment Setup Guide',
     excerpt: 'RoboMaster哨兵机器人Linux上位机，从零开始搭建完整的Ubuntu22.04下运行环境配置。',
+    excerptEn: 'RoboMaster sentry robot Linux host, from scratch to build a complete Ubuntu 22.04 operating environment configuration.',
     image: '/project-portfolio/blog1.png',
     date: '2024-12-30',
     readTime: '40分钟',
+    readTimeEn: '40 min',
     tags: ['哨兵', 'SLAM', '环境配置'],
+    tagsEn: ['Sentry', 'SLAM', 'Environment Setup'],
     link: 'https://www.notion.so/16c24a7052ae80909490d654ea911af2?v=455b50111f0647c8bb69feead50456fc&source=copy_link',
   },
   {
     title: 'moveit2更新urdf',
+    titleEn: 'Update URDF in MoveIt2',
     excerpt: '在moveit2中更新soildworks导出的机器人模型URDF。',
+    excerptEn: 'Update robot model URDF exported from SolidWorks in MoveIt2.',
     image: '/project-portfolio/blog2.png',
     date: '2025-05-05',
     readTime: '5分钟',
+    readTimeEn: '5 min',
     tags: ['Soildworks', 'moveit2', 'URDF'],
+    tagsEn: ['SolidWorks', 'MoveIt2', 'URDF'],
     link: 'https://www.notion.so/moveit2-urdf-1cc24a7052ae80e8ae58ff10fbdbb487',
   },
   {
     title: '25赛季哨兵组研发文档',
+    titleEn: 'Sentry Team R&D Document (2025 Season)',
     excerpt: '南航长空御风战队25赛季哨兵组研发文档，包括许许多多注意事项。',
+    excerptEn: 'Nanjing University of Aeronautics and Astronautics Changkong Yufeng team 2025 season sentry group R&D document, including many notes.',
     image: '/project-portfolio/blog3.jpg',
     date: '2023-12-20',
     readTime: '30分钟',
+    readTimeEn: '30 min',
     tags: ['哨兵', 'RoboMaster', '长空御风'],
+    tagsEn: ['Sentry', 'RoboMaster', 'Changkong Yufeng'],
     link: 'https://www.notion.so/25-1c724a7052ae80cab1cef2d2abbf24ba?source=copy_link',
   },
   {
     title: '视觉组新生讲义',
+    titleEn: 'Vision Team Newcomer Handbook',
     excerpt: '第十章初步介绍导航，包括机器人导航基础、SLAM算法、路径规划等内容。',
+    excerptEn: 'Chapter 10 introduces navigation, including robot navigation basics, SLAM algorithms, path planning, etc.',
     image: '/project-portfolio/blog4.png',
     date: '2025-05-05',
     readTime: '20分钟',
+    readTimeEn: '20 min',
     tags: ['导航', 'SLAM', '哨兵'],
+    tagsEn: ['Navigation', 'SLAM', 'Sentry'],
     link: '/project-portfolio/新生讲义导航部分.pdf',
   },
 ];
@@ -57,6 +78,7 @@ const blogPosts: BlogPost[] = [
 const Blog = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -98,11 +120,11 @@ const Blog = () => {
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-0.5 bg-[#00a67d]" />
               <span className="text-[#00a67d] text-sm uppercase tracking-widest font-medium">
-                技术博客
+                {language === 'zh' ? '技术博客' : 'Technical Blog'}
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-              分享与<span className="text-gradient">探索</span>
+              {language === 'zh' ? '分享与' : 'Sharing & '}<span className="text-gradient">{language === 'zh' ? '探索' : 'Exploring'}</span>
             </h2>
           </div>
         </div>
@@ -140,20 +162,20 @@ const Blog = () => {
                   <div className="flex items-center gap-4 mb-4 text-sm text-white/50">
                     <div className="flex items-center gap-1">
                       <Clock className="w-4 h-4" />
-                      <span>{post.readTime}</span>
+                      <span>{language === 'zh' ? post.readTime : post.readTimeEn}</span>
                     </div>
                   </div>
 
                   <h3 className="text-lg font-bold text-white mb-3 group-hover:text-[#00a67d] transition-colors line-clamp-2">
-                    {post.title}
+                    {language === 'zh' ? post.title : post.titleEn}
                   </h3>
                   <p className="text-white/60 text-sm line-clamp-3 mb-4">
-                    {post.excerpt}
+                    {language === 'zh' ? post.excerpt : post.excerptEn}
                   </p>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
-                    {post.tags.map((tag, i) => (
+                    {(language === 'zh' ? post.tags : post.tagsEn).map((tag, i) => (
                       <span
                         key={i}
                         className="flex items-center gap-1 text-xs text-[#00a67d] px-2 py-1 bg-[#00a67d]/10 rounded"
