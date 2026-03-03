@@ -327,7 +327,7 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedCategory, setSelectedCategory] = useState('全部');
   const [searchQuery, setSearchQuery] = useState('');
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   const categories = language === 'zh' ? ['全部', '课程项目', '竞赛项目', '科研项目', '个人项目'] : ['All', 'Course', 'Competition', 'Research', 'Personal'];
 
