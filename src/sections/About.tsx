@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Cpu, Code2, Wrench, Lightbulb } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,6 +10,7 @@ const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -54,18 +56,28 @@ const About = () => {
     return () => ctx.revert();
   }, []);
 
-  const stats = [
+  const stats = language === 'zh' ? [
     { number: 16, label: '参与研发机器人', suffix: '款', link: '#projects' },
     { number: 10, label: '国家级奖项', suffix: '项' },
     { number: 300, label: '社区技术影响', suffix: '+' },
     { number: 10, label: '项目工程', suffix: '+', link: 'https://github.com/cmyhj' },
+  ] : [
+    { number: 16, label: 'Robots Developed', suffix: '+', link: '#projects' },
+    { number: 10, label: 'National Awards', suffix: '' },
+    { number: 300, label: 'Community Impact', suffix: '+' },
+    { number: 10, label: 'Projects', suffix: '+', link: 'https://github.com/cmyhj' },
   ];
 
-  const highlights = [
+  const highlights = language === 'zh' ? [
     { icon: Cpu, text: '嵌入式系统开发' },
     { icon: Code2, text: 'ROS/ROS2架构' },
     { icon: Wrench, text: '机械设计仿真' },
     { icon: Lightbulb, text: '创新解决方案' },
+  ] : [
+    { icon: Cpu, text: 'Embedded Systems' },
+    { icon: Code2, text: 'ROS/ROS2 Architecture' },
+    { icon: Wrench, text: 'Mechanical Design' },
+    { icon: Lightbulb, text: 'Innovative Solutions' },
   ];
 
   return (
@@ -81,25 +93,21 @@ const About = () => {
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-0.5 bg-[#00a67d]" />
               <span className="text-[#00a67d] text-sm uppercase tracking-widest font-medium">
-                关于我
+                {t('aboutTitle')}
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">
-              在硬件与算法的交界处
-              <span className="text-gradient"> 寻找机器人的最优解</span>
+              {language === 'zh' ? '在硬件与算法的交界处' : 'At the Intersection of Hardware and Algorithms'}
+              <span className="text-gradient"> {language === 'zh' ? '寻找机器人的最优解' : 'Finding Optimal Solutions for Robotics'}</span>
             </h2>
 
             <div className="space-y-6 text-white/70 leading-relaxed">
               <p>
-                我是南航机器人工程专业的本科生，一名专注于机器人技术的实践者。从仿生机器人的粘附控制到自主导航系统的智能决策，
-                我致力于将前沿技术转化为实用的机器人解决方案。
+                {language === 'zh' ? '我是南航机器人工程专业的本科生，一名专注于机器人技术的实践者。从仿生机器人的粘附控制到自主导航系统的智能决策，我致力于将前沿技术转化为实用的机器人解决方案。' : 'I am an undergraduate student majoring in Robotics Engineering at Nanjing University of Aeronautics and Astronautics, a practitioner focused on robotics technology. From adhesion control of bionic robots to intelligent decision-making in autonomous navigation systems, I am committed to transforming cutting-edge technology into practical robotics solutions.'}
               </p>
               <p>
-                我的专业领域涵盖机械设计、嵌入式系统、ROS2开发等。我相信优秀的机器人不仅仅是技术的堆砌，
-                更是人机协作的完美体现。擅长将跨学科知识整合为完整的机器人解决方案——从PCB设计到SLAM算法，
-                从底层驱动到上层决策，追求让每个模块在系统中发挥最优价值。
-                每一个项目都是一次探索，每一次创新都推动着自我的边界。
+                {language === 'zh' ? '我的专业领域涵盖机械设计、嵌入式系统、ROS2开发等。我相信优秀的机器人不仅仅是技术的堆砌，更是人机协作的完美体现。擅长将跨学科知识整合为完整的机器人解决方案——从PCB设计到SLAM算法，从底层驱动到上层决策，追求让每个模块在系统中发挥最优价值。每一个项目都是一次探索，每一次创新都推动着自我的边界。' : 'My professional fields cover mechanical design, embedded systems, ROS2 development, etc. I believe that excellent robots are not just a堆砌 of technology, but a perfect embodiment of human-machine collaboration. I excel at integrating interdisciplinary knowledge into complete robotics solutions — from PCB design to SLAM algorithms, from low-level drivers to high-level decision-making, pursuing to make each module发挥 its optimal value in the system. Every project is an exploration, and every innovation pushes the boundaries of myself.'}
               </p>
             </div>
 

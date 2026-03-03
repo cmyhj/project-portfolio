@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Toaster } from '@/components/ui/sonner';
+import { LanguageProvider } from '@/context/LanguageContext';
 import Navigation from '@/sections/Navigation';
 import Hero from '@/sections/Hero';
 import About from '@/sections/About';
@@ -23,54 +24,56 @@ function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#181818] text-white overflow-x-hidden">
-      {/* Background effects */}
-      <div className="fixed inset-0 pointer-events-none">
-        {/* Gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#00a67d]/5 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#00a67d]/3 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
-        
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
+    <LanguageProvider>
+      <div className="relative min-h-screen bg-[#181818] text-white overflow-x-hidden">
+        {/* Background effects */}
+        <div className="fixed inset-0 pointer-events-none">
+          {/* Gradient orbs */}
+          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#00a67d]/5 rounded-full blur-[120px] animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#00a67d]/3 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
+          
+          {/* Grid pattern */}
+          <div
+            className="absolute inset-0 opacity-[0.02]"
+            style={{
+              backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+                                linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`,
+              backgroundSize: '60px 60px',
+            }}
+          />
+        </div>
+
+        {/* Navigation */}
+        <Navigation />
+
+        {/* Main content */}
+        <main className="relative z-10">
+          <Hero />
+          <About />
+          <Projects />
+          <Blog />
+          <Skills />
+          <Services />
+          <Experience />
+          <Contact />
+        </main>
+
+        {/* Footer */}
+        <Footer />
+
+        {/* Toast notifications */}
+        <Toaster 
+          position="top-center"
+          toastOptions={{
+            style: {
+              background: '#1f1f1f',
+              border: '1px solid rgba(255,255,255,0.1)',
+              color: '#fff',
+            },
           }}
         />
       </div>
-
-      {/* Navigation */}
-      <Navigation />
-
-      {/* Main content */}
-      <main className="relative z-10">
-        <Hero />
-        <About />
-        <Projects />
-        <Blog />
-        <Skills />
-        <Services />
-        <Experience />
-        <Contact />
-      </main>
-
-      {/* Footer */}
-      <Footer />
-
-      {/* Toast notifications */}
-      <Toaster 
-        position="top-center"
-        toastOptions={{
-          style: {
-            background: '#1f1f1f',
-            border: '1px solid rgba(255,255,255,0.1)',
-            color: '#fff',
-          },
-        }}
-      />
-    </div>
+    </LanguageProvider>
   );
 }
 

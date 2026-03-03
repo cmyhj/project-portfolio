@@ -10,6 +10,7 @@ import {
   DialogDescription,
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
+import { useLanguage } from '@/context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,8 +33,6 @@ interface Project {
     results: string;
   };
 }
-
-const categories = ['全部', '课程项目', '竞赛项目', '科研项目', '个人项目'];
 
 const projects: Project[] = [
   {
@@ -328,19 +327,22 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedCategory, setSelectedCategory] = useState('全部');
   const [searchQuery, setSearchQuery] = useState('');
+  const { t, language } = useLanguage();
+
+  const categories = language === 'zh' ? ['全部', '课程项目', '竞赛项目', '科研项目', '个人项目'] : ['All', 'Course', 'Competition', 'Research', 'Personal'];
 
   // Filter projects based on category and search
   const filteredProjects = useMemo(() => {
     return projects.filter((project) => {
       const matchesCategory = 
-        selectedCategory === '全部' || project.category === selectedCategory;
+        selectedCategory === (language === 'zh' ? '全部' : 'All') || project.category === selectedCategory;
       const matchesSearch = 
         project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         project.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()));
       return matchesCategory && matchesSearch;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [selectedCategory, searchQuery, language]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -382,24 +384,23 @@ const Projects = () => {
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-0.5 bg-[#00a67d]" />
             <span className="text-[#00a67d] text-sm uppercase tracking-widest font-medium">
-              作品集
+              {language === 'zh' ? '作品集' : 'Portfolio'}
             </span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-                我的<span className="text-gradient">机器人项目</span>
+                {language === 'zh' ? '我的' : 'My'}<span className="text-gradient">{language === 'zh' ? '机器人项目' : ' Robotics Projects'}</span>
               </h2>
               <p className="text-white/60 max-w-2xl">
-                从课程设计到竞赛项目，从个人兴趣到科研合作，
-                每个项目都代表着我在机器人领域的学习与成长。
+                {language === 'zh' ? '从课程设计到竞赛项目，从个人兴趣到科研合作，每个项目都代表着我在机器人领域的学习与成长。' : 'From course designs to competition projects, from personal interests to research collaborations, each project represents my learning and growth in the field of robotics.'}
               </p>
             </div>
             
             {/* Project count */}
             <div className="flex items-center gap-2 text-[#00a67d]">
               <span className="text-3xl font-bold">{filteredProjects.length}</span>
-              <span className="text-white/60">个项目</span>
+              <span className="text-white/60">{language === 'zh' ? '个项目' : ' Projects'}</span>
             </div>
           </div>
         </div>
@@ -410,7 +411,7 @@ const Projects = () => {
           <div className="relative flex-1 max-w-md">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40" />
             <Input
-              placeholder="搜索项目名称、技术栈..."
+              placeholder={language === 'zh' ? '搜索项目名称、技术栈...' : 'Search project names, tech stack...'}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10 bg-white/5 border-white/10 text-white placeholder:text-white/40
@@ -512,7 +513,7 @@ const Projects = () => {
                       onClick={(e) => e.stopPropagation()}
                     >
                       <Github className="w-3.5 h-3.5" />
-                      <span>代码</span>
+                      <span>{language === 'zh' ? '代码' : 'Code'}</span>
                     </a>
                   )}
                   {project.demoUrl && (
@@ -524,7 +525,7 @@ const Projects = () => {
                       onClick={(e) => e.stopPropagation()}
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
-                      <span>演示</span>
+                      <span>{language === 'zh' ? '演示' : 'Demo'}</span>
                     </a>
                   )}
                   {project.videoUrl && (
@@ -536,7 +537,7 @@ const Projects = () => {
                       onClick={(e) => e.stopPropagation()}
                     >
                       <Play className="w-3.5 h-3.5" />
-                      <span>视频</span>
+                      <span>{language === 'zh' ? '视频' : 'Video'}</span>
                     </a>
                   )}
                 </div>
@@ -551,8 +552,8 @@ const Projects = () => {
             <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-white/5 flex items-center justify-center">
               <Search className="w-8 h-8 text-white/30" />
             </div>
-            <h3 className="text-xl font-medium text-white mb-2">未找到匹配的项目</h3>
-            <p className="text-white/50">尝试调整搜索关键词或筛选条件</p>
+            <h3 className="text-xl font-medium text-white mb-2">{language === 'zh' ? '未找到匹配的项目' : 'No matching projects found'}</h3>
+            <p className="text-white/50">{language === 'zh' ? '尝试调整搜索关键词或筛选条件' : 'Try adjusting your search keywords or filter criteria'}</p>
           </div>
         )}
       </div>
@@ -627,15 +628,15 @@ const Projects = () => {
               {/* Details */}
               <div className="space-y-6 mt-6">
                 <div>
-                  <h4 className="text-lg font-semibold text-[#00a67d] mb-2">项目挑战</h4>
+                  <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '项目挑战' : 'Project Challenge'}</h4>
                   <p className="text-white/70">{selectedProject.details.challenge}</p>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-[#00a67d] mb-2">解决方案</h4>
+                  <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '解决方案' : 'Solution'}</h4>
                   <p className="text-white/70">{selectedProject.details.solution}</p>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-[#00a67d] mb-2">技术栈</h4>
+                  <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '技术栈' : 'Technology Stack'}</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.details.technologies.map((tech, index) => (
                       <span
@@ -648,7 +649,7 @@ const Projects = () => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-[#00a67d] mb-2">项目成果</h4>
+                  <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '项目成果' : 'Results'}</h4>
                   <p className="text-white/70">{selectedProject.details.results}</p>
                 </div>
               </div>
@@ -663,7 +664,7 @@ const Projects = () => {
                     className="flex items-center gap-2 px-6 py-2.5 bg-white/10 hover:bg-[#00a67d]/20 rounded-lg transition-colors"
                   >
                     <Github className="w-4 h-4" />
-                    <span>查看代码</span>
+                    <span>{language === 'zh' ? '查看代码' : 'View Code'}</span>
                   </a>
                 )}
                 {selectedProject.demoUrl && (
@@ -674,7 +675,7 @@ const Projects = () => {
                     className="flex items-center gap-2 px-6 py-2.5 bg-[#00a67d] hover:bg-[#00d4aa] rounded-lg transition-colors"
                   >
                     <ExternalLink className="w-4 h-4" />
-                    <span>在线演示</span>
+                    <span>{language === 'zh' ? '在线演示' : 'Online Demo'}</span>
                   </a>
                 )}
               </div>

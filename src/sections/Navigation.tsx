@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,13 +17,13 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { label: '关于', href: '#about' },
-    { label: '项目', href: '#projects' },
-    { label: '技能', href: '#skills' },
-    { label: '服务', href: '#services' },
-    { label: '经历', href: '#experience' },
-    { label: '博客', href: '#blog' },
-    { label: '联系', href: '#contact' },
+    { label: t('about'), href: '#about' },
+    { label: t('projects'), href: '#projects' },
+    { label: t('skills'), href: '#skills' },
+    { label: t('services'), href: '#services' },
+    { label: t('experience'), href: '#experience' },
+    { label: t('blog'), href: '#blog' },
+    { label: t('contact'), href: '#contact' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -52,7 +54,8 @@ const Navigation = () => {
               }}
               className="text-xl font-bold text-white"
             >
-              李沐<span className="text-gradient">远</span>
+              {language === 'zh' ? '李沐' : 'Li Muy'}
+              <span className="text-gradient">{language === 'zh' ? '远' : 'uan'}</span>
             </a>
 
             {/* Desktop nav */}
@@ -71,6 +74,15 @@ const Navigation = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00a67d] group-hover:w-full transition-all duration-300" />
                 </a>
               ))}
+              
+              {/* Language switcher */}
+              <button
+                onClick={() => setLanguage(language === 'zh' ? 'en' : 'zh')}
+                className="flex items-center gap-2 px-4 py-2 glass-card rounded-full hover:bg-[#00a67d]/20 transition-all duration-300"
+              >
+                <Globe className="w-4 h-4 text-[#00a67d]" />
+                <span className="text-sm text-white/80">{language === 'zh' ? 'EN' : '中文'}</span>
+              </button>
             </div>
 
             {/* CTA button */}
@@ -84,22 +96,33 @@ const Navigation = () => {
                 className="px-6 py-2.5 bg-[#00a67d]/10 text-[#00a67d] text-sm font-medium rounded-full
                          hover:bg-[#00a67d]/20 transition-all duration-300"
               >
-                开始合作
+                {t('startCooperation')}
               </a>
             </div>
 
             {/* Mobile menu button */}
-            <button
-              className="lg:hidden w-10 h-10 flex items-center justify-center text-white"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
+            <div className="lg:hidden flex items-center gap-4">
+              {/* Mobile language switcher */}
+              <button
+                onClick={() => setLanguage(language === 'zh' ? 'en' : 'zh')}
+                className="flex items-center gap-1 px-3 py-1.5 glass-card rounded-full"
+              >
+                <Globe className="w-3 h-3 text-[#00a67d]" />
+                <span className="text-xs text-white/80">{language === 'zh' ? 'EN' : '中文'}</span>
+              </button>
+              
+              <button
+                className="w-10 h-10 flex items-center justify-center text-white"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -153,7 +176,7 @@ const Navigation = () => {
               transition: `all 0.3s ease ${navLinks.length * 0.1}s`,
             }}
           >
-            开始合作
+            {t('startCooperation')}
           </a>
         </div>
       </div>

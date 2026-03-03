@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Github, Mail, FileText } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -9,6 +10,7 @@ const Hero = () => {
   const imageRef = useRef<HTMLDivElement>(null);
   const nameRef = useRef<HTMLDivElement>(null);
   const socialRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -89,9 +91,9 @@ const Hero = () => {
   }, []);
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/cmyhj', label: 'GitHub' },
-    { icon: Mail, href: 'mailto:autism2484684043@163.com', label: 'Email' },
-    { icon: FileText, href: '/project-portfolio/个人简历-李沐远-18965013309-南航.pdf', label: 'Resume' },
+    { icon: Github, href: 'https://github.com/cmyhj', label: t('github') },
+    { icon: Mail, href: 'mailto:autism2484684043@163.com', label: t('email') },
+    { icon: FileText, href: '/project-portfolio/个人简历-李沐远-18965013309-南航.pdf', label: t('resume') },
   ];
 
   return (
@@ -122,7 +124,7 @@ const Hero = () => {
           <div className="order-2 lg:order-1 text-center lg:text-left">
             <div ref={nameRef} className="mb-6">
               <span className="text-[#00a67d] text-sm uppercase tracking-[0.3em] font-medium">
-                李沐远
+                {t('name')}
               </span>
             </div>
 
@@ -130,16 +132,15 @@ const Hero = () => {
               ref={titleRef}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-8"
             >
-              <span className="block text-white">机器人实践者</span>
-              <span className="block text-gradient mt-2">与探索者</span>
+              <span className="block text-white">{t('title1')}</span>
+              <span className="block text-gradient mt-2">{t('title2')}</span>
             </h1>
 
             <p
               ref={subtitleRef}
               className="text-lg text-white/70 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed"
             >
-              兼具机械设计、电控开发与算法实现的
-              全栈能力。将创意转化为现实，用代码赋予机器生命。
+              {t('subtitle')}
             </p>
 
             <div ref={socialRef} className="flex flex-wrap justify-center lg:justify-start gap-4">
@@ -174,7 +175,7 @@ const Hero = () => {
               <div className="relative w-72 h-96 sm:w-80 sm:h-[28rem] lg:w-96 lg:h-[32rem] rounded-2xl overflow-hidden glass-card">
                 <img
                   src="/project-portfolio/portrait.png"
-                  alt="李沐远"
+                  alt={t('name')}
                   className="w-full h-full object-cover"
                 />
                 
@@ -186,7 +187,7 @@ const Hero = () => {
               <div className="absolute -bottom-4 -left-4 glass-card rounded-xl px-4 py-3 animate-float">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-[#00a67d] rounded-full animate-pulse" />
-                  <span className="text-sm text-white/80">欢迎交流</span>
+                  <span className="text-sm text-white/80">{t('welcome')}</span>
                 </div>
               </div>
 
@@ -194,7 +195,7 @@ const Hero = () => {
               <div className="absolute -top-4 -right-4 glass-card rounded-xl px-4 py-3 animate-float" style={{ animationDelay: '0.5s' }}>
                 <div className="text-center">
                   <span className="block text-2xl font-bold text-[#00a67d]">20+</span>
-                  <span className="text-xs text-white/60">项目经验</span>
+                  <span className="text-xs text-white/60">{t('experienceCount')}</span>
                 </div>
               </div>
             </div>
