@@ -57,8 +57,6 @@ const skills: Skill[] = [
   { name: 'Origin', nameEn: 'Origin', level: 75, icon: BarChart, category: '学术', categoryEn: 'Academic' },
 ];
 
-const skillCategories = ['全部', '编程语言', '算法/库', 'SLAM', '嵌入式', '机械设计', '学术'];
-
 const Skills = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const barsRef = useRef<HTMLDivElement>(null);
