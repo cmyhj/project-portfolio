@@ -324,10 +324,10 @@ const projects: Project[] = [
 const Projects = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState('全部');
-  const [searchQuery, setSearchQuery] = useState('');
   const { language } = useLanguage();
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState(language === 'zh' ? '全部' : 'All');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const categories = language === 'zh' ? ['全部', '课程项目', '竞赛项目', '科研项目', '个人项目'] : ['All', 'Course', 'Competition', 'Research', 'Personal'];
 
@@ -348,6 +348,11 @@ const Projects = () => {
       return matchesCategory && matchesSearch;
     });
   }, [selectedCategory, searchQuery, language]);
+
+  // Update selected category when language changes
+  useEffect(() => {
+    setSelectedCategory(language === 'zh' ? '全部' : 'All');
+  }, [language]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { toast } from 'sonner';
 import { Mail, MapPin, Phone, /*Send, */Github,/* Twitter ,*/ MessageCircle, MessageSquare } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 // import { Button } from '@/components/ui/button';
 // import { Input } from '@/components/ui/input';
 // import { Textarea } from '@/components/ui/textarea';
@@ -12,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   // const formRef = useRef<HTMLFormElement>(null);
+  const { language } = useLanguage();
   
   // const [formData, setFormData] = useState({
   //   name: '',
@@ -52,20 +54,20 @@ const Contact = () => {
 
   const handleCopy = (text: string, label: string) => {
     navigator.clipboard.writeText(text).then(() => {
-      toast.success('已复制到剪贴板', {
+      toast.success(language === 'zh' ? '已复制到剪贴板' : 'Copied to clipboard', {
         description: `${label}: ${text}`,
       });
     }).catch(() => {
-      toast.error('复制失败', {
-        description: '请手动复制',
+      toast.error(language === 'zh' ? '复制失败' : 'Copy failed', {
+        description: language === 'zh' ? '请手动复制' : 'Please copy manually',
       });
     });
   };
 
   const contactInfo = [
-    { icon: Mail, label: '邮箱', value: 'autism2484684043@163.com' },
-    { icon: Phone, label: '电话', value: '+86 189 6501 3309' },
-    { icon: MapPin, label: '地址', value: '南京航空航天大学' },
+    { icon: Mail, label: language === 'zh' ? '邮箱' : 'Email', value: 'autism2484684043@163.com' },
+    { icon: Phone, label: language === 'zh' ? '电话' : 'Phone', value: '+86 189 6501 3309' },
+    { icon: MapPin, label: language === 'zh' ? '地址' : 'Address', value: language === 'zh' ? '南京航空航天大学' : 'Nanjing University of Aeronautics and Astronautics' },
   ];
 
   const socialLinks = [
@@ -90,17 +92,16 @@ const Contact = () => {
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-0.5 bg-[#00a67d]" />
               <span className="text-[#00a67d] text-sm uppercase tracking-widest font-medium">
-                联系方式
+                {language === 'zh' ? '联系方式' : 'Contact'}
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-8">
-              让我们开始<span className="text-gradient">合作</span>
+              {language === 'zh' ? '让我们开始' : 'Let\'s Start'}<span className="text-gradient">{language === 'zh' ? '合作' : ' Cooperation'}</span>
             </h2>
 
             <p className="text-white/60 mb-10 leading-relaxed">
-              无论是机器人项目咨询、技术合作还是工作机会，都欢迎与我联系。
-              我期待与您一起探索机器人技术的无限可能。
+              {language === 'zh' ? '无论是机器人项目咨询、技术合作还是工作机会，都欢迎与我联系。我期待与您一起探索机器人技术的无限可能。' : 'Whether it\'s robot project consultation, technical cooperation, or job opportunities, feel free to contact me. I look forward to exploring the endless possibilities of robotics technology with you.'}
             </p>
 
             {/* Contact info */}
@@ -121,7 +122,7 @@ const Contact = () => {
 
             {/* Social links */}
             <div>
-              <h3 className="text-white font-semibold mb-4">社交媒体</h3>
+              <h3 className="text-white font-semibold mb-4">{language === 'zh' ? '社交媒体' : 'Social Media'}</h3>
               <div className="flex gap-4 mb-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -138,7 +139,7 @@ const Contact = () => {
                 ))}
               </div>
 
-              <h3 className="text-white font-semibold mb-4">联系方式</h3>
+              <h3 className="text-white font-semibold mb-4">{language === 'zh' ? '联系方式' : 'Contact Apps'}</h3>
               <div className="flex gap-4">
                 {contactApps.map((app, index) => (
                   <button
@@ -147,7 +148,7 @@ const Contact = () => {
                     className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center
                              hover:bg-[#00a67d]/20 hover:scale-110 transition-all duration-300 cursor-pointer"
                     aria-label={app.label}
-                    title={`点击复制${app.label}`}
+                    title={language === 'zh' ? `点击复制${app.label}` : `Click to copy ${app.label}`}
                   >
                     <app.icon className="w-5 h-5 text-[#00a67d]" />
                   </button>
