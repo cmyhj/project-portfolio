@@ -65,7 +65,7 @@ const blogPosts: BlogPost[] = [
     titleEn: 'Vision Team Newcomer Handbook',
     excerpt: '第十章初步介绍导航，包括机器人导航基础、SLAM算法、路径规划等内容。',
     excerptEn: 'Chapter 10 introduces navigation, including robot navigation basics, SLAM algorithms, path planning, etc.',
-    image: '/project-portfolio/blog4.png',
+    image: '/project-portfolio/blog4.jpg',
     date: '2025-05-05',
     readTime: '20分钟',
     readTimeEn: '20 min',

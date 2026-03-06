@@ -91,7 +91,7 @@ const projects: Project[] = [
     subtitle: 'Autonomous Patrol Robot for Complex Environments',
     description: '集侦、识、打功能于一体的狭窄空间自主巡防机器人，优化通信协议与底盘控制。',
     descriptionEn: 'Autonomous patrol robot for narrow spaces integrating detection, recognition, and attack functions, with optimized communication protocols and chassis control.',
-    image: '/project-portfolio/project16.png',
+    image: '/project-portfolio/project16.jpg',
     tags: ['Robotics', 'STM32', 'Control Algorithm', 'Communication Protocol'],
     category: '竞赛项目',
     year: '2024',
@@ -113,7 +113,7 @@ const projects: Project[] = [
     subtitle: 'Maze Battlefield Navigation System',
     description: '基于ROS2和OpenCV的模拟哨兵机器人视觉导航系统，实现动态迷宫中的目标识别、密码破解与自主路径规划。',
     descriptionEn: 'Vision-based navigation system for simulated sentinel robots based on ROS2 and OpenCV, achieving target recognition, password cracking, and autonomous path planning in dynamic mazes.',
-    image: '/project-portfolio/project14.png',
+    image: '/project-portfolio/project14.jpg',
     tags: ['Autonomous Navigation', 'ROS2', 'Computer Vision'],
     category: '个人项目',
     year: '2025',
@@ -122,9 +122,9 @@ const projects: Project[] = [
     demoUrl: '/project-portfolio/project14-demo.mp4',
     details: {
       challenge: '在随机生成的RM迷宫战场中，哨兵机器人需在有限视野条件下完成多阶段任务：识别并击毁巡逻敌方步兵获取密码片段，通过虚拟串口按特定协议（帧头0xAA、帧尾0xBB）收发密码数据，导航至中央蓝色区域解除敌方基地无敌状态，最终摧毁基地。困难模式下视野受限且地图未知，要求实时建图与动态避障。',
-      challengeEn: 'In randomly generated RM maze battlefield, sentinel robots need to complete multi-stage tasks under limited field of view: identify and destroy patrolling enemy infantry to obtain password fragments, send and receive password data through virtual serial port according to specific protocol (frame header 0xAA, frame tail 0xBB), navigate to central blue area to解除敌方基地无敌状态, and finally destroy the base. In hard mode, field of view is limited and map is unknown, requiring real-time mapping and dynamic obstacle avoidance.',
+      challengeEn: 'In randomly generated RM maze battlefield, sentinel robots need to complete multi-stage tasks under limited field of view: identify and destroy patrolling enemy infantry to obtain password fragments, send and receive password data through virtual serial port according to specific protocol (frame header 0xAA, frame tail 0xBB), navigate to central blue area to remove the enemy base's invincibility status, and finally destroy the base. In hard mode, field of view is limited and map is unknown, requiring real-time mapping and dynamic obstacle avoidance.',
       solution: '采用分层导航架构：使用OpenCV进行视觉感知与目标识别，结合Nav2框架实现实时建图；全局路径规划采用A*算法确保最优路径，自研局部控制器处理动态避障与巡逻敌人跟踪；通过串口通信模块完成与判题机的密码交互协议，实现密码片段的自动拼接与验证；集成ROS2话题机制实现图像接收与发射控制指令的发送。',
-      solutionEn: 'Adopted hierarchical navigation architecture: used OpenCV for visual perception and target recognition, combined with Nav2 framework to achieve real-time mapping; global path planning used A* algorithm to ensure optimal path, self-developed local controller handled dynamic obstacle avoidance and patrol enemy tracking; completed password interaction protocol with judging machine through serial communication module,实现密码片段的自动拼接与验证；集成ROS2话题机制实现图像接收与发射控制指令的发送。',
+      solutionEn: 'Adopted hierarchical navigation architecture: used OpenCV for visual perception and target recognition, combined with Nav2 framework to achieve real-time mapping; global path planning used A* algorithm to ensure optimal path, self-developed local controller handled dynamic obstacle avoidance and patrol enemy tracking; completed password interaction protocol with judging machine through serial communication module, achieve automatic concatenation and verification of password fragments; integrate the ROS2 topic mechanism to enable image reception and transmission of control commands.',
       technologies: ['ROS2', 'OpenCV', 'Nav2', 'A* Algorithm', 'C++', 'Serial Communication'],
       results: '困难模式成功达成目标，实现有限视野下的实时建图与自主导航，完成敌方步兵识别、密码破解及基地摧毁全流程任务，系统稳定通过有限视野迷宫挑战。',
       resultsEn: 'Successfully achieved goals in hard mode, realized real-time mapping and autonomous navigation under limited field of view, completed full-process tasks of enemy infantry identification, password cracking, and base destruction, and the system stably passed the limited field of view maze challenge.'
@@ -136,7 +136,7 @@ const projects: Project[] = [
     subtitle: 'Synthetic Data Generation Pipeline',
     description: '基于Godot引擎的自动化训练数据集生成工具，实现赛场环境的域随机化、视觉可见性校验与无人干预的自动标注导出。',
     descriptionEn: 'Automated training dataset generation tool based on Godot engine, achieving domain randomization of赛场环境, visual visibility verification, and unmanned automatic annotation export.',
-    image: '/project-portfolio/project15.png',
+    image: '/project-portfolio/project15.jpg',
     tags: ['Godot', 'Computer Vision', 'Synthetic Data', 'Automation'],
     category: '个人项目',
     year: '2024',
@@ -203,7 +203,7 @@ const projects: Project[] = [
     subtitle: 'Phigros Auto-Play Vision System',
     description: '基于ROS2和OpenCV开发Phigros音游（模拟器）自动打歌系统，实现音符检测、判定线识别与精准点击输出。',
     descriptionEn: 'Phigros rhythm game (simulator) auto-play system developed based on ROS2 and OpenCV, achieving note detection, judgment line recognition, and precise click output.',
-    image: '/project-portfolio/project13.png',
+    image: '/project-portfolio/project13.jpg',
     tags: ['Computer Vision', 'ROS2', 'OpenCV', 'C++'],
     category: '个人项目',
     year: '2024',
@@ -230,7 +230,7 @@ const projects: Project[] = [
     category: '竞赛项目',
     year: '2024',
     githubUrl: 'https://github.com/3126872157/dian_sai',
-    demoUrl: '/project-portfolio/project9-demo.gif',
+    videoUrl: '/project-portfolio/project9-demo.gif',
     details: {
       challenge: '在嵌入式平台（STM32+OpenMV）算力受限条件下，实现复杂背景下的实时指尖检测与棋盘定位；解决棋盘任意旋转导致的格点映射失真问题；设计高鲁棒性的人机交互逻辑，应对误触、遮挡等异常场景。',
       challengeEn: 'Achieving real-time fingertip detection and chessboard positioning in complex backgrounds under limited computing power conditions of embedded platforms (STM32+OpenMV); solving grid point mapping distortion problem caused by arbitrary chessboard rotation; designing highly robust human-computer interaction logic to handle abnormal scenarios such as false touches and occlusions.',
@@ -247,7 +247,7 @@ const projects: Project[] = [
     subtitle: 'Transmission Device Design',
     description: '综合运用机械设计知识完成传动装置总体设计、传动系统计算及减速器结构设计，培养工程实践能力和创新设计意识。',
     descriptionEn: 'Comprehensive use of mechanical design knowledge to complete overall transmission device design, transmission system calculation, and reducer structure design, cultivating engineering practice ability and innovative design awareness.',
-    image: '/project-portfolio/project12.png',
+    image: '/project-portfolio/project12.jpg',
     tags: ['Mechanical Design', 'Gear Transmission', 'AutoCAD', 'Engineering Drawing'],
     category: '课程项目',
     year: '2025',
@@ -288,7 +288,7 @@ const projects: Project[] = [
     subtitle: 'High-Speed Embedded Vision for Industrial AGV',
     description: '面向工业物流场景的轻量级AGV视觉定位解决方案，在资源极度受限的嵌入式平台上实现亚毫米级色环/色块识别与动态路径校准，满足高精度码垛与低功耗运行的双重约束。',
     descriptionEn: 'Lightweight AGV visual positioning solution for industrial logistics scenarios, achieving sub-millimeter level color ring/block recognition and dynamic path calibration on extremely resource-constrained embedded platforms, meeting the dual constraints of high-precision palletizing and low-power operation.',
-    image: '/project-portfolio/project6.png',
+    image: '/project-portfolio/project6.jpg',
     tags: ['Embedded Vision', 'AGV', 'Real-time System', 'Industrial Automation'],
     category: '竞赛项目',
     year: '2024',
@@ -310,7 +310,7 @@ const projects: Project[] = [
     subtitle: 'Pneumatic Soft Inchworm Robot for 3D Locomotion',
     description: '基于波纹管差分气压驱动的仿生软体机器人，突破传统一维/二维运动限制，实现三维空间内的多自由度灵活移动，用于狭窄管道检测与环境探索。',
     descriptionEn: 'Bio-inspired soft robot based on bellows differential pneumatic drive, breaking through traditional one-dimensional/two-dimensional movement limitations, achieving multi-degree-of-freedom flexible movement in three-dimensional space, used for narrow pipe detection and environmental exploration.',
-    image: '/project-portfolio/project5.png',
+    image: '/project-portfolio/project5.jpg',
     tags: ['Soft Robotics', 'Pneumatic Actuation', 'STM32', 'Embedded Control'],
     category: '科研项目',
     year: '2023',
@@ -638,126 +638,131 @@ const Projects = () => {
 
       {/* Project Detail Dialog */}
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-w-3xl bg-[#181818] border-white/10 text-white max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-5xl bg-[#181818] border-white/10 text-white max-h-[90vh] overflow-hidden">
           {selectedProject && (
-            <>
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold text-white">
-                  {language === 'zh' ? selectedProject.title : selectedProject.subtitle}
-                </DialogTitle>
-                <DialogDescription className="text-white/60">
-                  {language === 'zh' ? selectedProject.subtitle : selectedProject.title}
-                </DialogDescription>
-              </DialogHeader>
-
-              {/* Image or Video */}
-              <div className="relative h-64 rounded-xl overflow-hidden mt-4">
-                {selectedProject.videoUrl ? (
-                  selectedProject.videoUrl.includes('youtube.com') || selectedProject.videoUrl.includes('youtu.be') ? (
-                    <iframe
-                      src={`https://www.youtube.com/embed/${selectedProject.videoUrl.split('v=')[1]?.split('&')[0] || selectedProject.videoUrl.split('/').pop()}`}
-                      title={selectedProject.title}
-                      className="w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+            <div className="flex flex-col lg:flex-row gap-6 p-4">
+              {/* Left side: Image/Video */}
+              <div className="lg:w-1/2">
+                <DialogHeader className="mb-4">
+                  <DialogTitle className="text-2xl font-bold text-white">
+                    {language === 'zh' ? selectedProject.title : selectedProject.subtitle}
+                  </DialogTitle>
+                  <DialogDescription className="text-white/60">
+                    {language === 'zh' ? selectedProject.subtitle : selectedProject.title}
+                  </DialogDescription>
+                </DialogHeader>
+                
+                <div className="relative h-80 rounded-xl overflow-hidden">
+                  {selectedProject.videoUrl ? (
+                    selectedProject.videoUrl.includes('youtube.com') || selectedProject.videoUrl.includes('youtu.be') ? (
+                      <iframe
+                        src={`https://www.youtube.com/embed/${selectedProject.videoUrl.split('v=')[1]?.split('&')[0] || selectedProject.videoUrl.split('/').pop()}`}
+                        title={selectedProject.title}
+                        className="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    ) : (
+                      <video
+                        src={selectedProject.videoUrl}
+                        controls
+                        autoPlay
+                        loop
+                        muted
+                        className="w-full h-full object-cover"
+                      />
+                    )
                   ) : (
-                    <video
-                      src={selectedProject.videoUrl}
-                      controls
-                      autoPlay
-                      loop
-                      muted
+                    <img
+                      src={selectedProject.image}
+                      alt={selectedProject.title}
                       className="w-full h-full object-cover"
                     />
-                  )
-                ) : (
-                  <img
-                    src={selectedProject.image}
-                    alt={selectedProject.title}
-                    className="w-full h-full object-cover"
-                  />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#181818] to-transparent" />
-                
-                {/* Meta badges */}
-                <div className="absolute bottom-4 left-4 flex gap-2">
-                  <span className="px-3 py-1 glass-card rounded-lg text-sm text-[#00a67d]">
-                    {selectedProject.category}
-                  </span>
-                  <span className="px-3 py-1 glass-card rounded-lg text-sm text-white/80">
-                    {selectedProject.year}
-                  </span>
-                </div>
-              </div>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mt-4">
-                {selectedProject.tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 text-xs bg-[#00a67d]/20 text-[#00a67d] rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {/* Details */}
-              <div className="space-y-6 mt-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '项目挑战' : 'Project Challenge'}</h4>
-                  <p className="text-white/70">{language === 'zh' ? selectedProject.details.challenge : selectedProject.details.challengeEn}</p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '解决方案' : 'Solution'}</h4>
-                  <p className="text-white/70">{language === 'zh' ? selectedProject.details.solution : selectedProject.details.solutionEn}</p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '技术栈' : 'Technology Stack'}</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedProject.details.technologies.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 text-sm bg-white/5 text-white/80 rounded-lg"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#181818] to-transparent" />
+                  
+                  {/* Meta badges */}
+                  <div className="absolute bottom-4 left-4 flex gap-2">
+                    <span className="px-3 py-1 glass-card rounded-lg text-sm text-[#00a67d]">
+                      {selectedProject.category}
+                    </span>
+                    <span className="px-3 py-1 glass-card rounded-lg text-sm text-white/80">
+                      {selectedProject.year}
+                    </span>
                   </div>
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '项目成果' : 'Results'}</h4>
-                  <p className="text-white/70" dangerouslySetInnerHTML={{ __html: language === 'zh' ? selectedProject.details.results : selectedProject.details.resultsEn }}></p>
-                </div>
               </div>
 
-              {/* Links */}
-              <div className="flex gap-4 mt-8">
-                {selectedProject.githubUrl && (
-                  <a
-                    href={selectedProject.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-2.5 bg-white/10 hover:bg-[#00a67d]/20 rounded-lg transition-colors"
-                  >
-                    <Github className="w-4 h-4" />
-                    <span>{language === 'zh' ? '查看代码' : 'View Code'}</span>
-                  </a>
-                )}
-                {selectedProject.demoUrl && (
-                  <a
-                    href={selectedProject.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-2.5 bg-[#00a67d] hover:bg-[#00d4aa] rounded-lg transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span>{language === 'zh' ? '在线演示' : 'Online Demo'}</span>
-                  </a>
-                )}
+              {/* Right side: Content (scrollable) */}
+              <div className="lg:w-1/2 overflow-y-auto max-h-[70vh] pr-2">
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {selectedProject.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 text-xs bg-[#00a67d]/20 text-[#00a67d] rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Details */}
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '项目挑战' : 'Project Challenge'}</h4>
+                    <p className="text-white/70">{language === 'zh' ? selectedProject.details.challenge : selectedProject.details.challengeEn}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '解决方案' : 'Solution'}</h4>
+                    <p className="text-white/70">{language === 'zh' ? selectedProject.details.solution : selectedProject.details.solutionEn}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '技术栈' : 'Technology Stack'}</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.details.technologies.map((tech, index) => (
+                        <span
+                          key={index}
+                          className="px-3 py-1 text-sm bg-white/5 text-white/80 rounded-lg"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '项目成果' : 'Results'}</h4>
+                    <p className="text-white/70" dangerouslySetInnerHTML={{ __html: language === 'zh' ? selectedProject.details.results : selectedProject.details.resultsEn }}></p>
+                  </div>
+                </div>
+
+                {/* Links */}
+                <div className="flex gap-4 mt-8">
+                  {selectedProject.githubUrl && (
+                    <a
+                      href={selectedProject.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-2.5 bg-white/10 hover:bg-[#00a67d]/20 rounded-lg transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                      <span>{language === 'zh' ? '查看代码' : 'View Code'}</span>
+                    </a>
+                  )}
+                  {selectedProject.demoUrl && (
+                    <a
+                      href={selectedProject.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-2.5 bg-[#00a67d] hover:bg-[#00d4aa] rounded-lg transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span>{language === 'zh' ? '在线演示' : 'Online Demo'}</span>
+                    </a>
+                  )}
+                </div>
               </div>
-            </>
+            </div>
           )}
         </DialogContent>
       </Dialog>

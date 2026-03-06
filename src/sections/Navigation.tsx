@@ -54,8 +54,8 @@ const Navigation = () => {
               }}
               className="text-xl font-bold text-white"
             >
-              {language === 'zh' ? '李沐' : 'Li Muy'}
-              <span className="text-gradient">{language === 'zh' ? '远' : 'uan'}</span>
+              {language === 'zh' ? '李沐' : 'Muyuan'}
+              <span className="text-gradient">{language === 'zh' ? '远' : 'Li'}</span>
             </a>
 
             {/* Desktop nav */}
