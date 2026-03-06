@@ -638,7 +638,7 @@ const Projects = () => {
 
       {/* Project Detail Dialog */}
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-w-5xl bg-[#181818] border-white/10 text-white max-h-[90vh] overflow-hidden">
+        <DialogContent className="max-w-[90vw] lg:max-w-[90vw] bg-[#181818] border-white/10 text-white max-h-[90vh] overflow-hidden">
           {selectedProject && (
             <div className="flex flex-col lg:flex-row gap-6 p-4">
               {/* Left side: Image/Video */}
