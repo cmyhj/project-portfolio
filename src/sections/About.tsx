@@ -99,6 +99,7 @@ const About = () => {
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">
               {language === 'zh' ? '在硬件与算法的交界处' : 'At the Intersection of Hardware and Algorithms'}
+              <br />
               <span className="text-gradient"> {language === 'zh' ? '探索机器人的最优解' : 'Exploring Optimal Solutions for Robotics'}</span>
             </h2>
 

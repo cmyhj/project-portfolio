@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink, Github, Play, ArrowRight, Search, Filter } from 'lucide-react';
+import { ExternalLink, Github, Play, ArrowRight, Search, Filter, Monitor } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -581,13 +581,13 @@ const Projects = () => {
                 </p>
 
                 {/* Links */}
-                <div className="flex items-center gap-3 pt-3 border-t border-white/5">
+                <div className="flex items-center gap-2 pt-3 border-t border-white/5">
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs text-white/50 hover:text-[#00a67d] transition-colors"
+                      className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-white/70 bg-white/5 hover:bg-white/10 hover:text-[#00a67d] rounded-md transition-all"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <Github className="w-3.5 h-3.5" />
@@ -599,10 +599,10 @@ const Projects = () => {
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs text-white/50 hover:text-[#00a67d] transition-colors"
+                      className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-white/70 bg-white/5 hover:bg-white/10 hover:text-[#00a67d] rounded-md transition-all"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <ExternalLink className="w-3.5 h-3.5" />
+                      <Monitor className="w-3.5 h-3.5" />
                       <span>{language === 'zh' ? '演示' : 'Demo'}</span>
                     </a>
                   )}
@@ -611,7 +611,7 @@ const Projects = () => {
                       href={project.videoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs text-white/50 hover:text-[#00a67d] transition-colors"
+                      className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-white/70 bg-white/5 hover:bg-white/10 hover:text-[#00a67d] rounded-md transition-all"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <Play className="w-3.5 h-3.5" />
