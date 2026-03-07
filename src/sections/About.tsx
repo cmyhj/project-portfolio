@@ -58,7 +58,7 @@ const About = () => {
 
   const stats = language === 'zh' ? [
     { number: 16, label: '参与研发机器人', suffix: '款', link: '#projects' },
-    { number: 10, label: '国家级奖项', suffix: '项' },
+    { number: 7, label: '国家级奖项', suffix: '项' },
     { number: 300, label: '社区技术影响', suffix: '+' },
     { number: 10, label: '项目工程', suffix: '+', link: 'https://github.com/cmyhj' },
   ] : [
@@ -99,17 +99,21 @@ const About = () => {
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">
               {language === 'zh' ? '在硬件与算法的交界处' : 'At the Intersection of Hardware and Algorithms'}
-              <span className="text-gradient"> {language === 'zh' ? '寻找机器人的最优解' : 'Finding Optimal Solutions for Robotics'}</span>
+              <span className="text-gradient"> {language === 'zh' ? '探索机器人的最优解' : 'Exploring Optimal Solutions for Robotics'}</span>
             </h2>
 
             <div className="space-y-6 text-white/70 leading-relaxed">
-              <p>
-                {language === 'zh' ? '我是南航机器人工程专业的本科生，一名专注于机器人技术的实践者。从仿生机器人的粘附控制到自主导航系统的智能决策，我致力于将前沿技术转化为实用的机器人解决方案。' : 'I am an undergraduate student majoring in Robotics Engineering at Nanjing University of Aeronautics and Astronautics, a practitioner focused on robotics technology. From adhesion control of bionic robots to intelligent decision-making in autonomous navigation systems, I am committed to transforming cutting-edge technology into practical robotics solutions.'}
-              </p>
-              <p>
-                {language === 'zh' ? '我的专业领域涵盖机械设计、嵌入式系统、ROS2开发等。我相信优秀的机器人不仅仅是技术的堆砌，更是人机协作的完美体现。擅长将跨学科知识整合为完整的机器人解决方案——从PCB设计到SLAM算法，从底层驱动到上层决策，追求让每个模块在系统中发挥最优价值。每一个项目都是一次探索，每一次创新都推动着自我的边界。' : 'My professional fields cover mechanical design, embedded systems, ROS2 development, etc. I believe that excellent robots are not just a pile of technology, but a perfect embodiment of human-machine collaboration. I excel at integrating interdisciplinary knowledge into complete robotics solutions — from PCB design to SLAM algorithms, from low-level drivers to high-level decision-making, pursuing to make each module realize its optimal value in the system. Every project is an exploration, and every innovation pushes the boundaries of myself.'}
-              </p>
-            </div>
+            <p>
+              {language === 'zh'
+                ? '我是南航机器人工程专业的本科生，一个对“如何让机器更智能”充满好奇的探索者。我的兴趣覆盖机械、电控与算法——从设计零件、编写底层驱动，到调试SLAM算法，我享受跨学科协作带来的挑战与乐趣。'
+                : 'I am an undergraduate student majoring in Robotics Engineering at Nanjing University of Aeronautics and Astronautics, an explorer curious about "how to make machines smarter." My interests span mechanics, electronics, and algorithms — from designing parts and writing low-level drivers to debugging SLAM algorithms, I enjoy the challenges and fun of interdisciplinary collaboration.'}
+            </p>
+            <p>
+              {language === 'zh'
+                ? '虽然仍是一名学习者，但我已具备将创意转化为原型的能力：兼具机械设计、电控开发与算法实现的初步全栈视野。我相信，优秀的机器人诞生于反复迭代与开放学习。同时，我对深度学习、3D重建、AIGC等前沿领域充满好奇，正积极学习探索，希望将这些技术融入机器人感知与决策，让机器更智能地理解世界。'
+                : 'Although still a learner, I have developed the ability to turn ideas into prototypes: with a preliminary full-stack perspective covering mechanical design, embedded development, and algorithm implementation. I believe that excellent robots are born from iterative refinement and open-minded learning.Meanwhile, I am deeply curious about cutting-edge fields such as deep learning, 3D reconstruction, and AIGC, and am actively learning to integrate these technologies into robotic perception and decision-making, enabling machines to understand the world more intelligently.'}
+            </p>
+          </div>
 
             {/* Highlights */}
             <div className="grid grid-cols-2 gap-4 mt-10">

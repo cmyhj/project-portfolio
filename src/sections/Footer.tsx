@@ -40,7 +40,8 @@ const Footer = () => {
               {language === 'zh' ? '李沐' : 'Muyuan '}<span className="text-gradient">{language === 'zh' ? '远' : 'Li'}</span>
             </h3>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
-              {language === 'zh' ? '一名机器人实践者，兼具机械设计、电控开发与算法实现的全栈能力。将创意转化为现实，用代码赋予机器生命。' : 'A robotics practitioner with full-stack capabilities in mechanical design, electronic control development, and algorithm implementation. Transforming ideas into reality, breathing life into machines with code.'}
+              {language === 'zh' ? '一名机器人实践者，兼具机械、电控与算法基础，并正拓展深度学习、3D重建等前沿领域。将创意转化为现实，用代码赋予机器生命。' : 
+              'A robotics practitioner with a foundation in mechanics, electronics, and algorithms, now expanding into deep learning, 3D reconstruction, and AIGC. Transforming ideas into reality, breathing life into machines with code.'}
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social, index) => (

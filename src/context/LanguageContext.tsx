@@ -28,7 +28,7 @@ const translations = {
     name: '李沐远',
     title1: '机器人实践者',
     title2: '与探索者',
-    subtitle: '兼具机械设计、电控开发与算法实现的全栈能力。将创意转化为现实，用代码赋予机器生命。',
+    subtitle: '兼具机械、电控与算法基础，并正拓展深度学习、3D重建等前沿领域。将创意转化为现实，用代码赋予机器生命。',
     github: 'GitHub',
     email: 'Email',
     resume: 'Resume',
@@ -81,7 +81,7 @@ const translations = {
     name: 'Muyuan LI',
     title1: 'Robot Practitioner',
     title2: 'and Explorer',
-    subtitle: 'Full-stack capabilities combining mechanical design, electronic control development, and algorithm implementation. ' +
+    subtitle: 'A robotics practitioner with a foundation in mechanics, electronics, and algorithms, now expanding into deep learning, 3D reconstruction, and AIGC. ' +
     'Transforming ideas into reality, breathing life into machines with code.',
     github: 'GitHub',
     email: 'Email',
