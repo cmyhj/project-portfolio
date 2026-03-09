@@ -640,7 +640,7 @@ const Projects = () => {
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
         <DialogContent className="max-w-[90vw] lg:max-w-[90vw] bg-[#181818] border-white/10 text-white max-h-[90vh] overflow-hidden">
           {selectedProject && (
-            <div className="flex flex-col lg:flex-row gap-6 p-4 h-full overflow-hidden">
+            <div className="flex flex-col lg:flex-row gap-6 p-4 overflow-hidden">
               {/* Left side: Image/Video */}
               <div className="lg:w-1/2 flex-shrink-0">
                 <DialogHeader className="mb-4">
@@ -667,6 +667,7 @@ const Projects = () => {
                         src={selectedProject.videoUrl}
                         controls
                         autoPlay
+                        playsInline
                         loop
                         muted
                         className="w-full h-full object-cover"
@@ -679,7 +680,9 @@ const Projects = () => {
                       className="w-full h-full object-cover"
                     />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#181818] to-transparent" />
+                  {!selectedProject.videoUrl && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#181818] to-transparent" />
+                  )}
                   
                   {/* Meta badges */}
                   <div className="absolute bottom-3 left-3 flex gap-2">
@@ -694,7 +697,7 @@ const Projects = () => {
               </div>
 
               {/* Right side: Content (scrollable) */}
-              <div className="lg:w-1/2 overflow-y-auto flex-grow pr-1">
+              <div className="lg:w-1/2 overflow-y-auto flex-grow pr-1 max-h-[50vh] lg:max-h-[70vh]">
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {selectedProject.tags.map((tag, index) => (
