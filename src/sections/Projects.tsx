@@ -697,7 +697,7 @@ const Projects = () => {
               </div>
 
               {/* Right side: Content (scrollable) */}
-              <div className="lg:w-1/2 overflow-y-auto flex-grow pr-1 max-h-[50vh] lg:max-h-[70vh]">
+              <div className="lg:w-1/2 overflow-y-auto flex-grow pr-1 max-h-[45vh] lg:max-h-[70vh] pb-4">
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {selectedProject.tags.map((tag, index) => (
@@ -740,7 +740,7 @@ const Projects = () => {
                 </div>
 
                 {/* Links */}
-                <div className="flex flex-col sm:flex-row gap-3 mt-6 mb-2">
+                <div className="flex flex-col sm:flex-row gap-3 mt-6 mb-8">
                   {selectedProject.githubUrl && (
                     <a
                       href={selectedProject.githubUrl}
