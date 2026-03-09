@@ -640,19 +640,19 @@ const Projects = () => {
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
         <DialogContent className="max-w-[90vw] lg:max-w-[90vw] bg-[#181818] border-white/10 text-white max-h-[90vh] overflow-hidden">
           {selectedProject && (
-            <div className="flex flex-col lg:flex-row gap-6 p-4">
+            <div className="flex flex-col lg:flex-row gap-6 p-4 h-full overflow-hidden">
               {/* Left side: Image/Video */}
-              <div className="lg:w-1/2">
+              <div className="lg:w-1/2 flex-shrink-0">
                 <DialogHeader className="mb-4">
-                  <DialogTitle className="text-2xl font-bold text-white">
+                  <DialogTitle className="text-xl lg:text-2xl font-bold text-white">
                     {language === 'zh' ? selectedProject.title : selectedProject.subtitle}
                   </DialogTitle>
-                  <DialogDescription className="text-white/60">
+                  <DialogDescription className="text-white/60 text-sm">
                     {language === 'zh' ? selectedProject.subtitle : selectedProject.title}
                   </DialogDescription>
                 </DialogHeader>
                 
-                <div className="relative h-80 rounded-xl overflow-hidden">
+                <div className="relative h-48 sm:h-56 lg:h-80 rounded-xl overflow-hidden">
                   {selectedProject.videoUrl ? (
                     selectedProject.videoUrl.includes('youtube.com') || selectedProject.videoUrl.includes('youtu.be') ? (
                       <iframe
@@ -682,11 +682,11 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#181818] to-transparent" />
                   
                   {/* Meta badges */}
-                  <div className="absolute bottom-4 left-4 flex gap-2">
-                    <span className="px-3 py-1 glass-card rounded-lg text-sm text-[#00a67d]">
+                  <div className="absolute bottom-3 left-3 flex gap-2">
+                    <span className="px-2.5 py-0.5 glass-card rounded-lg text-xs text-[#00a67d]">
                       {selectedProject.category}
                     </span>
-                    <span className="px-3 py-1 glass-card rounded-lg text-sm text-white/80">
+                    <span className="px-2.5 py-0.5 glass-card rounded-lg text-xs text-white/80">
                       {selectedProject.year}
                     </span>
                   </div>
@@ -694,13 +694,13 @@ const Projects = () => {
               </div>
 
               {/* Right side: Content (scrollable) */}
-              <div className="lg:w-1/2 overflow-y-auto max-h-[70vh] pr-2">
+              <div className="lg:w-1/2 overflow-y-auto flex-grow pr-1">
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-1.5 mb-4">
                   {selectedProject.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 text-xs bg-[#00a67d]/20 text-[#00a67d] rounded-full"
+                      className="px-2.5 py-0.5 text-xs bg-[#00a67d]/20 text-[#00a67d] rounded-full"
                     >
                       {tag}
                     </span>
@@ -708,22 +708,22 @@ const Projects = () => {
                 </div>
 
                 {/* Details */}
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <div>
-                    <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '项目挑战' : 'Project Challenge'}</h4>
-                    <p className="text-white/70">{language === 'zh' ? selectedProject.details.challenge : selectedProject.details.challengeEn}</p>
+                    <h4 className="text-base font-semibold text-[#00a67d] mb-1.5">{language === 'zh' ? '项目挑战' : 'Project Challenge'}</h4>
+                    <p className="text-white/70 text-sm">{language === 'zh' ? selectedProject.details.challenge : selectedProject.details.challengeEn}</p>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '解决方案' : 'Solution'}</h4>
-                    <p className="text-white/70">{language === 'zh' ? selectedProject.details.solution : selectedProject.details.solutionEn}</p>
+                    <h4 className="text-base font-semibold text-[#00a67d] mb-1.5">{language === 'zh' ? '解决方案' : 'Solution'}</h4>
+                    <p className="text-white/70 text-sm">{language === 'zh' ? selectedProject.details.solution : selectedProject.details.solutionEn}</p>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '技术栈' : 'Technology Stack'}</h4>
-                    <div className="flex flex-wrap gap-2">
+                    <h4 className="text-base font-semibold text-[#00a67d] mb-1.5">{language === 'zh' ? '技术栈' : 'Technology Stack'}</h4>
+                    <div className="flex flex-wrap gap-1.5">
                       {selectedProject.details.technologies.map((tech, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 text-sm bg-white/5 text-white/80 rounded-lg"
+                          className="px-2.5 py-1 text-xs bg-white/5 text-white/80 rounded-lg"
                         >
                           {tech}
                         </span>
@@ -731,19 +731,19 @@ const Projects = () => {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-[#00a67d] mb-2">{language === 'zh' ? '项目成果' : 'Results'}</h4>
-                    <p className="text-white/70" dangerouslySetInnerHTML={{ __html: language === 'zh' ? selectedProject.details.results : selectedProject.details.resultsEn }}></p>
+                    <h4 className="text-base font-semibold text-[#00a67d] mb-1.5">{language === 'zh' ? '项目成果' : 'Results'}</h4>
+                    <p className="text-white/70 text-sm" dangerouslySetInnerHTML={{ __html: language === 'zh' ? selectedProject.details.results : selectedProject.details.resultsEn }}></p>
                   </div>
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-4 mt-8">
+                <div className="flex flex-col sm:flex-row gap-3 mt-6 mb-2">
                   {selectedProject.githubUrl && (
                     <a
                       href={selectedProject.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-2.5 bg-white/10 hover:bg-[#00a67d]/20 rounded-lg transition-colors"
+                      className="flex items-center justify-center gap-2 px-4 py-2 bg-white/10 hover:bg-[#00a67d]/20 rounded-lg transition-colors text-sm"
                     >
                       <Github className="w-4 h-4" />
                       <span>{language === 'zh' ? '查看代码' : 'View Code'}</span>
@@ -754,7 +754,7 @@ const Projects = () => {
                       href={selectedProject.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-2.5 bg-[#00a67d] hover:bg-[#00d4aa] rounded-lg transition-colors"
+                      className="flex items-center justify-center gap-2 px-4 py-2 bg-[#00a67d] hover:bg-[#00d4aa] rounded-lg transition-colors text-sm"
                     >
                       <ExternalLink className="w-4 h-4" />
                       <span>{language === 'zh' ? '在线演示' : 'Online Demo'}</span>
