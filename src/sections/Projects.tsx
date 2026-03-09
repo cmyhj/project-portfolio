@@ -73,8 +73,7 @@ const projects: Project[] = [
     category: '科研项目',
     year: '2025',
     githubUrl: 'https://github.com/cmyhj/ClimBot',
-    demoUrl: '/project-portfolio/project3-demo.mp4',
-    videoUrl: '/project-portfolio/project3-video.mp4',
+    videoUrl: '/project-portfolio/project3-demo.mp4',
     details: {
       challenge: '仿壁虎粘附机构在粗糙表面的可靠性控制，以及90°内外直角过渡时的力矩平衡与姿态保持，需解决脚掌剥离/粘附的时序同步问题。',
       challengeEn: 'Reliability control of gecko-inspired adhesion mechanisms on rough surfaces, torque balance and attitude maintenance during 90° internal/external right-angle transitions, and solving the timing synchronization problem of foot peeling/adhesion.',
