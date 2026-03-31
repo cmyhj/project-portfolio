@@ -14,6 +14,13 @@ import { useLanguage } from '@/context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
+interface ProjectVideo {
+  url: string;
+  title?: string;
+  titleEn?: string;
+  thumbnail?: string;
+}
+
 interface Project {
   id: number;
   title: string;
@@ -27,6 +34,7 @@ interface Project {
   githubUrl?: string;
   demoUrl?: string;
   videoUrl?: string;
+  videos?: ProjectVideo[];
   details: {
     challenge: string;
     challengeEn: string;
@@ -52,11 +60,38 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/nuaa-rm/auto_sentry2025',
     videoUrl: '/project-portfolio/project1-video.mp4',
     demoUrl: '/project-portfolio/project1-demo.mp4',
+    videos: [
+      {
+        url: '/project-portfolio/project1-video.mp4',
+        title: '狭窄通道自主导航演示1',
+        titleEn: 'Autonomous Navigation Demo',
+      },
+      {
+        url: '/project-portfolio/project1-demo.mp4',
+        title: '狭窄通道自主导航演示2',
+        titleEn: 'Competition Footage',
+      },
+      {
+        url: '/project-portfolio/project1-gimbal.mp4',
+        title: '云台旋转同时正常导航前往目的地',
+        titleEn: 'Gimbal Rotation Parallel Navigation to Destination',
+      },
+      {
+        url: '/project-portfolio/project1-chassis.mp4',
+        title: '底盘旋转同时正常导航前往目的地',
+        titleEn: 'Chassis Rotation Parallel Navigation to Destination',
+      },
+      {
+        url: '/project-portfolio/project1-system.mp4',
+        title: '上位机可视化界面',
+        titleEn: 'System Visualization Interface',
+      },
+    ],
     details: {
       challenge: '在强干扰非结构化环境中实现鲁棒定位（大量动态障碍物），解决狭窄通道（<50cm）的高频路径规划，以及多任务并发下的实时决策调度（巡逻/追击/躲避优先级动态切换）。',
       challengeEn: 'Achieving robust localization in strongly interfering unstructured environments (with many dynamic obstacles), solving high-frequency path planning in narrow channels (<50cm), and real-time decision scheduling under multi-task concurrency (dynamic switching of patrol/pursuit/evasion priorities).',
-      solution: '设计并实现了双激光雷达点云融合前端，优化Point-LIO算法；开发Nav2自定义代价地图层与自动化标定工具链，重构TEB局部规划器参数以提升狭窄空间通过性；搭建分层行为树架构，实现感知-决策-控制闭环。',
-      solutionEn: 'Designed and implemented a dual-lidar point cloud fusion front-end, optimized Point-LIO algorithm; developed Nav2 custom cost map layers and automated calibration toolchain, reconstructed TEB local planner parameters to improve narrow space passability; built a hierarchical behavior tree architecture to achieve perception-decision-control closed loop.',
+      solution: '设计并实现了双激光雷达点云融合前端，优化Point-LIO算法；开发Nav2自定义代价地图层与自动化标定工具链，重构TEB局部规划器参数以提升狭窄空间通过性；搭建分层行为树架构，实现感知-决策-控制闭环；实现机器人云台与底盘运动解耦，云台可独立旋转进行环境感知（激光雷达置于云台），底盘同时正常导航前往目的地，确保感知与运动并行执行。',
+      solutionEn: 'Designed and implemented a dual-lidar point cloud fusion front-end, optimized Point-LIO algorithm; developed Nav2 custom cost map layers and automated calibration toolchain, reconstructed TEB local planner parameters to improve narrow space passability; built a hierarchical behavior tree architecture to achieve perception-decision-control closed loop; achieved decoupling of robot gimbal and chassis, enabling the gimbal to rotate independently for environmental perception (lidar mounted on gimbal) while the chassis navigates normally to the destination, ensuring parallel execution of perception and motion.',
       technologies: ['ROS2 Humble', 'Navigation2', 'PCL', 'Eigen', 'Point-LIO', 'BehaviourTree.CPP'],
       results: '定位初始化成功率提升至100%（20余场正式比赛中），在全国百余所高校参赛队伍中，狭窄通道通过性能位列第一梯队。',
       resultsEn: 'Localization initialization success rate increased to 100% (in over 20 official competitions), and narrow channel passing performance ranked in the first tier among more than 100 university teams nationwide.'
@@ -96,15 +131,32 @@ const projects: Project[] = [
     year: '2024',
     githubUrl: 'https://github.com/bandetip/sentinel',
     demoUrl: '/project-portfolio/project16-demo.mp4',
-    details: {
+    videos: [
+      {
+        url: '/project-portfolio/project1-gimbal.mp4',
+        title: '云台旋转同时正常导航前往目的地',
+        titleEn: 'Gimbal Rotation Parallel Navigation to Destination',
+      },
+      {
+        url: '/project-portfolio/project1-chassis.mp4',
+        title: '底盘旋转同时正常导航前往目的地',
+        titleEn: 'Chassis Rotation Parallel Navigation to Destination',
+      },
+      {
+        url: '/project-portfolio/project16-demo.mp4',
+        title: '击打大符',
+        titleEn: 'Attack Symbol',
+      },
+    ],
+    details: { 
       challenge: '在狭窄复杂空间（斜坡、台阶、狭窄隧道）实现自主巡防，面临多传感器实时数据融合、高频率目标识别与火控响应、半舵轮半全向轮混合底盘的复杂运动学解算、以及原通信协议传输速率瓶颈等难题；需在保证实时性的同时实现上下位机高速协同。',
       challengeEn: 'Achieving autonomous patrol in narrow complex spaces (slopes, steps, narrow tunnels), facing challenges such as multi-sensor real-time data fusion, high-frequency target recognition and fire control response, complex kinematic calculation of semi-steering wheel semi-omnidirectional wheel hybrid chassis, and transmission rate bottlenecks of the original communication protocol; need to achieve high-speed coordination between upper and lower computers while ensuring real-time performance.',
-      solution: '优化单片机与上位机通信协议，采用特定序列化/反序列化程序重构数据帧结构；针对半舵轮半全向轮混合底盘开发专用运动学解算算法与高性能控制器；基于FreeRTOS重构嵌入式软件架构，实现HAL层、RTOS层、应用层模块化分离；集成双激光雷达SLAM、视觉自瞄、行为树决策等算法，完成机电控一体化系统联调。',
-      solutionEn: 'Optimized communication protocol between single-chip microcomputer and upper computer, reconstructed data frame structure using specific serialization/deserialization programs; developed dedicated kinematic calculation algorithm and high-performance controller for semi-steering wheel semi-omnidirectional wheel hybrid chassis; reconstructed embedded software architecture based on FreeRTOS, achieving modular separation of HAL layer, RTOS layer, and application layer; integrated dual-lidar SLAM, visual aiming, behavior tree decision-making and other algorithms, completed mechanical-electronic-control integrated system joint debugging.',
+      solution: '优化单片机与上位机通信协议，采用特定序列化/反序列化程序重构数据帧结构；针对半舵轮半全向轮混合底盘开发专用运动学解算算法与高性能控制器；基于FreeRTOS重构嵌入式软件架构，实现HAL层、RTOS层、应用层模块化分离；集成双激光雷达SLAM、视觉自瞄、行为树决策等算法，完成机电控一体化系统联调；实现机器人云台与底盘运动解耦，云台可独立旋转进行环境感知的同时底盘正常导航前往目的地，或底盘旋转时云台保持目标锁定，确保导航与任务并行执行。',
+      solutionEn: 'Optimized communication protocol between single-chip microcomputer and upper computer, reconstructed data frame structure using specific serialization/deserialization programs; developed dedicated kinematic calculation algorithm and high-performance controller for semi-steering wheel semi-omnidirectional wheel hybrid chassis; reconstructed embedded software architecture based on FreeRTOS, achieving modular separation of HAL layer, RTOS layer, and application layer; integrated dual-lidar SLAM, visual aiming, behavior tree decision-making and other algorithms, completed mechanical-electronic-control integrated system joint debugging; achieved decoupling of robot gimbal and chassis, enabling the gimbal to rotate independently for environmental perception while the chassis navigates normally to the destination, or the chassis to rotate while the gimbal maintains target locking, ensuring parallel execution of navigation and task.',
       technologies: ['STM32', 'FreeRTOS', 'CAN Bus', 'PID Control'],
       results: '通信协议优化后传输速率提升50倍以上；半舵半全向底盘实现全向移动与原地转动，适应20度斜坡与复杂地形；完成机械、算法、电控一体化联调，实现无人干预自主巡防功能。',
       resultsEn: 'After communication protocol optimization, transmission rate increased by more than 50 times; semi-steering semi-omnidirectional chassis achieved omnidirectional movement and in-place rotation, adapting to 20-degree slopes and complex terrain; completed mechanical, algorithmic, and electronic control integrated system joint debugging, achieving unmanned autonomous patrol function.'
-    },
+    }
   },
   {
     id: 4,
@@ -395,6 +447,7 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedCategory, setSelectedCategory] = useState(language === 'zh' ? '全部' : 'All');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedVideoIndex, setSelectedVideoIndex] = useState(0);
 
   const categories = language === 'zh' ? ['全部', '课程项目', '竞赛项目', '科研项目', '个人项目'] : ['All', 'Course', 'Competition', 'Research', 'Personal'];
 
@@ -636,7 +689,7 @@ const Projects = () => {
       </div>
 
       {/* Project Detail Dialog */}
-      <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
+      <Dialog open={!!selectedProject} onOpenChange={() => { setSelectedProject(null); setSelectedVideoIndex(0); }}>
         <DialogContent className="max-w-[90vw] lg:max-w-[90vw] bg-[#181818] border-white/10 text-white max-h-[90vh] overflow-hidden">
           {selectedProject && (
             <div className="flex flex-col lg:flex-row gap-6 p-4 overflow-hidden">
@@ -652,7 +705,18 @@ const Projects = () => {
                 </DialogHeader>
                 
                 <div className="relative h-48 sm:h-56 lg:h-80 rounded-xl overflow-hidden">
-                  {selectedProject.videoUrl ? (
+                  {selectedProject.videos && selectedProject.videos.length > 0 ? (
+                    <video
+                      key={selectedVideoIndex}
+                      src={selectedProject.videos[selectedVideoIndex].url}
+                      controls
+                      autoPlay
+                      playsInline
+                      loop
+                      muted
+                      className="w-full h-full object-cover"
+                    />
+                  ) : selectedProject.videoUrl ? (
                     selectedProject.videoUrl.includes('youtube.com') || selectedProject.videoUrl.includes('youtu.be') ? (
                       <iframe
                         src={`https://www.youtube.com/embed/${selectedProject.videoUrl.split('v=')[1]?.split('&')[0] || selectedProject.videoUrl.split('/').pop()}`}
@@ -679,7 +743,7 @@ const Projects = () => {
                       className="w-full h-full object-cover"
                     />
                   )}
-                  {!selectedProject.videoUrl && (
+                  {(!selectedProject.videoUrl && !selectedProject.videos) && (
                     <div className="absolute inset-0 bg-gradient-to-t from-[#181818] to-transparent" />
                   )}
                   
@@ -693,6 +757,25 @@ const Projects = () => {
                     </span>
                   </div>
                 </div>
+
+                {/* Video selector */}
+                {selectedProject.videos && selectedProject.videos.length > 1 && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {selectedProject.videos.map((video, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setSelectedVideoIndex(index)}
+                        className={`px-3 py-1.5 text-xs rounded-lg transition-all ${
+                          selectedVideoIndex === index
+                            ? 'bg-[#00a67d] text-white'
+                            : 'bg-white/10 text-white/70 hover:bg-white/20'
+                        }`}
+                      >
+                        {language === 'zh' ? video.title : video.titleEn}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Right side: Content (scrollable) */}
