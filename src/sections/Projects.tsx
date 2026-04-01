@@ -63,28 +63,28 @@ const projects: Project[] = [
     videos: [
       {
         url: '/project-portfolio/project1-video.mp4',
-        title: '狭窄通道自主导航演示1',
-        titleEn: 'Autonomous Navigation Demo',
+        title: '窄道导航1',
+        titleEn: 'Narrow Channel Navigation 1',
       },
       {
         url: '/project-portfolio/project1-demo.mp4',
-        title: '狭窄通道自主导航演示2',
-        titleEn: 'Competition Footage',
+        title: '窄道导航2',
+        titleEn: 'Narrow Channel Navigation 2',
       },
       {
         url: '/project-portfolio/project1-gimbal.mp4',
-        title: '云台旋转同时正常导航前往目的地',
-        titleEn: 'Gimbal Rotation Parallel Navigation to Destination',
+        title: '云台旋转导航',
+        titleEn: 'Gimbal Rotation Navigation',
       },
       {
         url: '/project-portfolio/project1-chassis.mp4',
-        title: '底盘旋转同时正常导航前往目的地',
-        titleEn: 'Chassis Rotation Parallel Navigation to Destination',
+        title: '底盘旋转导航',
+        titleEn: 'Chassis Rotation Navigation',
       },
       {
         url: '/project-portfolio/project1-system.mp4',
-        title: '上位机可视化界面',
-        titleEn: 'System Visualization Interface',
+        title: '上位机界面',
+        titleEn: 'System Interface',
       },
     ],
     details: {
