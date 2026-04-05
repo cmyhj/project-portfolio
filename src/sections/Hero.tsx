@@ -93,7 +93,7 @@ const Hero = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/cmyhj', label: t('github') },
     { icon: Mail, href: 'mailto:autism2484684043@163.com', label: t('email') },
-    { icon: FileText, href: '/project-portfolio/个人简历-李沐远-18965013309-南航.pdf', label: t('resume') },
+    { icon: FileText, href: '/project-portfolio/个人简历_李沐远_18965013309_南航.pdf', label: t('resume') },
   ];
 
   return (
