@@ -28,7 +28,9 @@ const papers: Paper[] = [
     authors: 'Muyuan Li, Qian Zhang, Hongze Wang, Zhiwei Yu',
     venue: 'IEEE/ASME TMECH',
     year: '2026',
-    links: [],
+    links: [
+      { label: 'Project', href: 'https://github.com/cmyhj/ClimBot', icon: 'project' },
+    ],
   },
   {
     title: 'Key technologies of bionic inchworm robots: a survey',
@@ -38,6 +40,7 @@ const papers: Paper[] = [
     month: 'Feb',
     links: [
       { label: 'Paper', href: 'https://doi.org/10.20517/ir.2026.03', icon: 'paper' },
+      { label: 'Project', href: 'https://github.com/Rango8848/Inchworm', icon: 'project' },
     ],
   },
 ];
