@@ -5,7 +5,7 @@ specs: []
 plans:
   - docs/compose/plans/2026-08-02-papers-section.md
 branch: main
-commits: 8360248..1708353
+commits: 8360248..b313e71
 ---
 
 # Papers Section — Final Report
@@ -14,13 +14,13 @@ commits: 8360248..1708353
 
 为个人主页新增了一个「论文 / Publications」版块，以学术主页常见的竖向论文卡片列表展示论文：每行一张 glass-card 卡片，包含序号、会议/年份徽章、论文标题、作者（作者名高亮绿色）以及论文/代码/项目页图标链接。版块支持中英双语切换、GSAP 滚动出现动画，并已接入导航栏（`#papers` 锚点）。
 
-论文内容目前为示例数据（JAVEdit、OpenVE-3M、Cycle-World、SPOT-E），代码中以 `// TODO: 替换为真实论文数据` 标注，用户后续自行替换。
+论文内容目前为一篇真实录用论文（IEEE/ASME TMECH：*Controllable External Transition of a Gecko-Inspired Wheel-Legged Robot on Complex Surfaces*，2026），作者列表暂为「Muyuan Li, ...」、暂无外链。代码中以 `// TODO` 注释标明可按 `Paper` 接口继续添加条目。
 
 ## Architecture
 
 - **`src/sections/Papers.tsx`** — 新组件（默认导出 `Papers`，无 props）：
   - `Paper` / `PaperLink` 接口定义数据模型（标题、作者、venue、年份、链接组）
-  - 顶层 `papers` 数组存放示例数据（TODO 注释标记）
+  - 顶层 `papers` 数组存放论文数据（当前为真实论文，TODO 注释标记可继续添加）
   - `linkIcons` 映射 lucide 图标（FileText/Github/Globe）
   - `highlightAuthors()` 将作者名中的 "Muyuan Li" 高亮为绿色
   - GSAP + ScrollTrigger 滚动出现动画，模式与 `Blog.tsx` 完全一致（`gsap.context` + `top 85%` + `ctx.revert()` 清理）
@@ -43,7 +43,7 @@ commits: 8360248..1708353
 
 - `npm run build`（tsc -b + vite build）通过，1781 模块无类型错误
 - `npx eslint` 单独检查改动的 4 个文件零错误；仓库现存 10 个 lint 错误均为存量问题（react-refresh/react-hooks，位于 components/ui、Projects 等未改动文件）
-- 产物 bundle 中确认包含 `"papers"` section id、`#papers` 导航锚点及全部示例论文标题
+- 产物 bundle 中确认包含 `"papers"` section id、`#papers` 导航锚点及真实论文标题；示例论文已全部移除
 - `vite preview` 启动后 HTTP 200，页面正常引用 JS bundle
 - 浏览器内人工冒烟检查（滚动动画、双语切换视觉效果）建议用户本地 `npm run dev` 确认
 
