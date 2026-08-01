@@ -20,14 +20,23 @@ interface Paper {
   links: PaperLink[];
 }
 
-// TODO: 添加更多论文时按 Paper 接口补充条目（示例数据已全部替换为真实论文）
+// TODO: 添加更多论文时按 Paper 接口补充条目
 const papers: Paper[] = [
   {
     title: 'Controllable External Transition of a Gecko-Inspired Wheel-Legged Robot on Complex Surfaces',
-    authors: 'Muyuan Li, ...',
+    authors: 'Muyuan Li, Qian Zhang, Hongze Wang, Zhiwei Yu',
     venue: 'IEEE/ASME TMECH',
     year: '2026',
     links: [],
+  },
+  {
+    title: 'Key technologies of bionic inchworm robots: a survey',
+    authors: 'Zhiwei Yu, Shuoyan Ma, Qian Zhang, Zhiyuan Liu, Yixing Shi, Muyuan Li, Zhengxin Yu',
+    venue: 'Intell. Robot.',
+    year: '2026',
+    links: [
+      { label: 'Paper', href: 'https://doi.org/10.20517/ir.2026.03', icon: 'paper' },
+    ],
   },
 ];
 

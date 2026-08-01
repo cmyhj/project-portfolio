@@ -14,7 +14,7 @@ commits: 8360248..b313e71
 
 为个人主页新增了一个「论文 / Publications」版块，以学术主页常见的竖向论文卡片列表展示论文：每行一张 glass-card 卡片，包含序号、会议/年份徽章、论文标题、作者（作者名高亮绿色）以及论文/代码/项目页图标链接。版块支持中英双语切换、GSAP 滚动出现动画，并已接入导航栏（`#papers` 锚点）。
 
-论文内容目前为一篇真实录用论文（IEEE/ASME TMECH：*Controllable External Transition of a Gecko-Inspired Wheel-Legged Robot on Complex Surfaces*，2026），作者列表暂为「Muyuan Li, ...」、暂无外链。代码中以 `// TODO` 注释标明可按 `Paper` 接口继续添加条目。
+论文内容目前为两篇真实论文：IEEE/ASME TMECH（*Controllable External Transition of a Gecko-Inspired Wheel-Legged Robot on Complex Surfaces*，2026，作者 Muyuan Li, Qian Zhang, Hongze Wang, Zhiwei Yu，暂无外链）与 Intelligence & Robotics（*Key technologies of bionic inchworm robots: a survey*，2026，带 DOI 链接）。代码中以 `// TODO` 注释标明可按 `Paper` 接口继续添加条目。
 
 ## Architecture
 
