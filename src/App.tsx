@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Toaster } from '@/components/ui/sonner';
-import { LanguageProvider } from '@/context/LanguageContext';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { LanguageProvider, useLanguage } from '@/context/LanguageContext';
 import Navigation from '@/sections/Navigation';
 import Hero from '@/sections/Hero';
 import About from '@/sections/About';
@@ -14,6 +15,18 @@ import Contact from '@/sections/Contact';
 import Footer from '@/sections/Footer';
 import './App.css';
 
+// Language switch changes text lengths and layout heights, which invalidates
+// ScrollTrigger start positions computed at mount; refresh recalculates them.
+const ScrollTriggerRefresher = () => {
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    ScrollTrigger.refresh();
+  }, [language]);
+
+  return null;
+};
+
 function App() {
   useEffect(() => {
     // Smooth scroll polyfill for Safari
@@ -26,6 +39,7 @@ function App() {
 
   return (
     <LanguageProvider>
+      <ScrollTriggerRefresher />
       <div className="relative min-h-screen bg-[#181818] text-white overflow-x-hidden">
         {/* Background effects */}
         <div className="fixed inset-0 pointer-events-none">
