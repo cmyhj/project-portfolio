@@ -21,6 +21,7 @@ const translations = {
     services: '服务',
     experience: '经历',
     blog: '博客',
+    papers: '论文',
     contact: '联系',
     startCooperation: '开始合作',
     
@@ -74,6 +75,7 @@ const translations = {
     services: 'Services',
     experience: 'Experience',
     blog: 'Blog',
+    papers: 'Publications',
     contact: 'Contact',
     startCooperation: 'Start Cooperation',
     

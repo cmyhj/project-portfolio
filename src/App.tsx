@@ -9,6 +9,7 @@ import Skills from '@/sections/Skills';
 import Services from '@/sections/Services';
 import Experience from '@/sections/Experience';
 import Blog from '@/sections/Blog';
+import Papers from '@/sections/Papers';
 import Contact from '@/sections/Contact';
 import Footer from '@/sections/Footer';
 import './App.css';
@@ -52,6 +53,7 @@ function App() {
           <About />
           <Projects />
           <Blog />
+          <Papers />
           <Skills />
           <Services />
           <Experience />

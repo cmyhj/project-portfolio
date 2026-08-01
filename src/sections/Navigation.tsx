@@ -23,6 +23,7 @@ const Navigation = () => {
     { label: t('services'), href: '#services' },
     { label: t('experience'), href: '#experience' },
     { label: t('blog'), href: '#blog' },
+    { label: t('papers'), href: '#papers' },
     { label: t('contact'), href: '#contact' },
   ];
 
