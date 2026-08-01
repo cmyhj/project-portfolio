@@ -719,7 +719,7 @@ const Projects = () => {
                   </DialogDescription>
                 </DialogHeader>
                 
-                <div className="relative aspect-[16/10] rounded-xl overflow-hidden">
+                <div className="relative aspect-video rounded-xl overflow-hidden">
                   {selectedProject.videos && selectedProject.videos.length > 0 ? (
                     <video
                       key={selectedVideoIndex}

@@ -182,10 +182,10 @@ const Papers = () => {
                       onClick={() => openProject(paper.projectId!)}
                       aria-label={language === 'zh' ? '查看项目详情' : 'View project details'}
                       title={language === 'zh' ? '查看项目详情' : 'View project details'}
-                      className="hidden lg:flex w-10 h-10 rounded-full bg-[#00a67d]/0
-                                  group-hover:bg-[#00a67d] items-center justify-center
-                                  opacity-0 group-hover:opacity-100
-                                  transform translate-x-2 group-hover:translate-x-0
+                      className="flex w-10 h-10 rounded-full items-center justify-center
+                                  bg-[#00a67d] lg:bg-[#00a67d]/0
+                                  lg:opacity-0 lg:group-hover:opacity-100
+                                  lg:translate-x-2 lg:group-hover:translate-x-0
                                   transition-all duration-300"
                     >
                       <ArrowUpRight className="w-5 h-5 text-white" />
