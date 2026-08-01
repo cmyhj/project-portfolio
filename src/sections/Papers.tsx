@@ -20,47 +20,14 @@ interface Paper {
   links: PaperLink[];
 }
 
-// TODO: 替换为真实论文数据 (sample data)
+// TODO: 添加更多论文时按 Paper 接口补充条目（示例数据已全部替换为真实论文）
 const papers: Paper[] = [
   {
-    title: 'JAVEdit: Joint Audio-Visual Instruction-Guided Video Editing',
+    title: 'Controllable External Transition of a Gecko-Inspired Wheel-Legged Robot on Complex Surfaces',
     authors: 'Muyuan Li, ...',
-    venue: 'arXiv',
+    venue: 'IEEE/ASME TMECH',
     year: '2026',
-    links: [
-      { label: 'Paper', href: 'https://arxiv.org/', icon: 'paper' },
-      { label: 'Code', href: 'https://github.com/', icon: 'code' },
-    ],
-  },
-  {
-    title: 'OpenVE-3M: Open Vocabulary Video Editing with 3 Million Instructions',
-    authors: 'Muyuan Li, ...',
-    venue: 'ECCV',
-    year: '2026',
-    links: [
-      { label: 'Paper', href: 'https://arxiv.org/', icon: 'paper' },
-      { label: 'Project', href: 'https://example.com/', icon: 'project' },
-    ],
-  },
-  {
-    title: 'Cycle-World: Scalable World Modeling for Embodied Agents',
-    authors: 'Muyuan Li, ...',
-    venue: 'ECCV',
-    year: '2026',
-    links: [
-      { label: 'Paper', href: 'https://arxiv.org/', icon: 'paper' },
-      { label: 'Code', href: 'https://github.com/', icon: 'code' },
-    ],
-  },
-  {
-    title: 'SPOT-E: Spatio-Temporal Object Placement and Editing in Video',
-    authors: 'Muyuan Li, ...',
-    venue: 'ECCV',
-    year: '2026',
-    links: [
-      { label: 'Paper', href: 'https://arxiv.org/', icon: 'paper' },
-      { label: 'Project', href: 'https://example.com/', icon: 'project' },
-    ],
+    links: [],
   },
 ];
 
