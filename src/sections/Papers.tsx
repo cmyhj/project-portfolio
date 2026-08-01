@@ -18,6 +18,7 @@ interface Paper {
   venue: string;
   year: string;
   month?: string;
+  projectId?: number;
   links: PaperLink[];
 }
 
@@ -28,6 +29,7 @@ const papers: Paper[] = [
     authors: 'Muyuan Li, Qian Zhang, Hongze Wang, Zhiwei Yu',
     venue: 'IEEE/ASME TMECH',
     year: '2026',
+    projectId: 2,
     links: [
       { label: 'Project', href: 'https://github.com/cmyhj/ClimBot', icon: 'project' },
     ],
@@ -38,6 +40,7 @@ const papers: Paper[] = [
     venue: 'Intelligence & Robotics',
     year: '2026',
     month: 'Feb',
+    projectId: 13,
     links: [
       { label: 'Paper', href: 'https://doi.org/10.20517/ir.2026.03', icon: 'paper' },
       { label: 'Project', href: 'https://github.com/Rango8848/Inchworm', icon: 'project' },
@@ -66,6 +69,11 @@ const Papers = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const rowsRef = useRef<HTMLDivElement>(null);
   const { language } = useLanguage();
+
+  const openProject = (id: number) => {
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    window.dispatchEvent(new CustomEvent('open-project', { detail: { id } }));
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -169,13 +177,20 @@ const Papers = () => {
                       </a>
                     );
                   })}
-                  <div className="hidden lg:flex w-10 h-10 rounded-full bg-[#00a67d]/0
+                  {paper.projectId && (
+                    <button
+                      onClick={() => openProject(paper.projectId!)}
+                      aria-label={language === 'zh' ? '查看项目详情' : 'View project details'}
+                      title={language === 'zh' ? '查看项目详情' : 'View project details'}
+                      className="hidden lg:flex w-10 h-10 rounded-full bg-[#00a67d]/0
                                   group-hover:bg-[#00a67d] items-center justify-center
                                   opacity-0 group-hover:opacity-100
                                   transform translate-x-2 group-hover:translate-x-0
-                                  transition-all duration-300">
-                    <ArrowUpRight className="w-5 h-5 text-white" />
-                  </div>
+                                  transition-all duration-300"
+                    >
+                      <ArrowUpRight className="w-5 h-5 text-white" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

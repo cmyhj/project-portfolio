@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo } from 'react';
+import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink, Github, Play, ArrowRight, Search, Filter, Monitor } from 'lucide-react';
@@ -473,6 +473,21 @@ const Projects = () => {
   useEffect(() => {
     setSelectedCategory(language === 'zh' ? '全部' : 'All');
   }, [language]);
+
+  // Open a project's detail dialog on demand (e.g. from the Papers section arrow)
+  const handleOpenProject = useCallback((e: Event) => {
+    const { id } = (e as CustomEvent<{ id: number }>).detail;
+    const project = projects.find((p) => p.id === id);
+    if (project) {
+      setSelectedProject(project);
+      setSelectedVideoIndex(0);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('open-project', handleOpenProject);
+    return () => window.removeEventListener('open-project', handleOpenProject);
+  }, [handleOpenProject]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
