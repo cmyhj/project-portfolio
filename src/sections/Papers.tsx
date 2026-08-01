@@ -17,6 +17,7 @@ interface Paper {
   authors: string;
   venue: string;
   year: string;
+  month?: string;
   links: PaperLink[];
 }
 
@@ -32,8 +33,9 @@ const papers: Paper[] = [
   {
     title: 'Key technologies of bionic inchworm robots: a survey',
     authors: 'Zhiwei Yu, Shuoyan Ma, Qian Zhang, Zhiyuan Liu, Yixing Shi, Muyuan Li, Zhengxin Yu',
-    venue: 'Intell. Robot.',
+    venue: 'Intelligence & Robotics',
     year: '2026',
+    month: 'Feb',
     links: [
       { label: 'Paper', href: 'https://doi.org/10.20517/ir.2026.03', icon: 'paper' },
     ],
@@ -118,13 +120,16 @@ const Papers = () => {
             >
               <div className="flex flex-col lg:flex-row lg:items-center gap-6">
                 {/* Index + venue */}
-                <div className="flex lg:flex-col lg:items-center gap-3 lg:gap-2 lg:w-24 shrink-0">
+                <div className="flex lg:flex-col lg:items-start lg:gap-1.5 lg:w-40 shrink-0">
                   <span className="text-white/30 text-sm font-bold">
                     {String(index + 1).padStart(2, '0')}
                   </span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs text-[#00a67d] px-2.5 py-1 bg-[#00a67d]/10 rounded-full font-medium">
-                      {paper.venue} {paper.year}
+                  <div className="lg:mt-1 flex flex-col lg:items-start gap-0.5 min-w-0">
+                    <span className="text-xs text-[#00a67d] font-medium leading-snug">
+                      {paper.venue}
+                    </span>
+                    <span className="text-xs text-white/50">
+                      {paper.month ? `${paper.month} ${paper.year}` : paper.year}
                     </span>
                   </div>
                 </div>
